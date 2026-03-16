@@ -18,6 +18,20 @@ const revenueTrend = [
   { name: "2024", value: 160 },
 ];
 
+const CustomTooltip = ({ active, payload, label, prefix = "", suffix = "" }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-slate-900/90 backdrop-blur-xl border border-slate-800 p-6 rounded-[24px] shadow-3xl flex flex-col gap-1 min-w-[180px] ring-1 ring-white/5">
+        <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em]">{label}</p>
+        <p className="text-white text-2xl font-black tabular-nums tracking-tight">
+          {prefix}{new Intl.NumberFormat('vi-VN').format(payload[0].value)}{suffix}
+        </p>
+      </div>
+    );
+  }
+  return null;
+};
+
 export default function FinancialStats() {
   const [mounted, setMounted] = useState(false);
 
@@ -26,6 +40,22 @@ export default function FinancialStats() {
   }, []);
   return (
     <section className="py-24 bg-slate-900/30 relative overflow-hidden">
+      <style jsx global>{`
+        .recharts-bar-rectangles:focus,
+        .recharts-layer:focus,
+        .recharts-rectangle:focus,
+        .recharts-surface focus,
+        .recharts-wrapper *:focus {
+          outline: none !important;
+          border: none !important;
+          box-shadow: none !important;
+          stroke: none !important;
+          stroke-width: 0 !important;
+        }
+        .recharts-tooltip-cursor {
+          display: none !important;
+        }
+      `}</style>
       <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 blur-[100px] pointer-events-none" />
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -85,15 +115,18 @@ export default function FinancialStats() {
                   <BlurInView delay={0.6} className="h-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={assetData}>
-                        <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
+                        <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} dy={10} />
                         <Tooltip
-                          contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '16px', color: '#f8fafc' }}
-                          itemStyle={{ fontWeight: 'bold' }}
-                          formatter={(value: any) => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value)}
+                          content={<CustomTooltip suffix=" đ" />}
+                          cursor={false}
                         />
-                        <Bar dataKey="total" radius={[8, 8, 0, 0]}>
+                        <Bar dataKey="total" radius={[8, 8, 8, 8]}>
                           {assetData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={index === 2 ? '#06b6d4' : '#1e293b'} />
+                            <Cell 
+                              key={`cell-${index}`} 
+                              fill={index === 2 ? '#06b6d4' : '#1e3046'} 
+                              className="transition-all duration-500 hover:opacity-80 cursor-pointer"
+                            />
                           ))}
                         </Bar>
                       </BarChart>
@@ -127,8 +160,7 @@ export default function FinancialStats() {
                           </linearGradient>
                         </defs>
                         <Tooltip
-                          contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '16px', color: '#f8fafc' }}
-                          labelClassName="text-slate-400 font-bold"
+                          content={<CustomTooltip suffix="%" />}
                         />
                         <Area type="monotone" dataKey="value" stroke="#06b6d4" strokeWidth={4} fillOpacity={1} fill="url(#colorValue)" />
                       </AreaChart>
