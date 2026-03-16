@@ -1,11 +1,16 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { Metadata } from "next";
 import { Code, Link2, ShieldCheck, Microscope, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+import { FadeInView, StaggerContainer, BlurInView } from "@/components/ui/animations";
+import { JsonLd, serviceJsonLd } from "@/components/seo/JsonLd";
+
+export const metadata: Metadata = {
+  title: "Dịch vụ",
+  description: "Cung cấp các dịch vụ phát triển phần mềm, tích hợp hệ thống viễn thông, vận hành bảo trì SLA và kiểm thử QA chuyên nghiệp.",
+};
 
 const services = [
   {
@@ -69,27 +74,24 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="flex flex-col">
+      <JsonLd data={serviceJsonLd} />
       {/* Header Section */}
       <section className="pt-24 pb-16 bg-slate-950 relative overflow-hidden">
         <div className="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 bg-cyan-500/10 blur-[100px] pointer-events-none" />
         <Container className="relative z-10">
-          <div className="flex flex-col gap-8 max-w-4xl">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-7xl font-extrabold tracking-tight text-white uppercase leading-tight"
-            >
-              Dịch vụ của <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Minh Châu</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-slate-400 leading-relaxed font-medium"
-            >
-              Cung cấp dịch vụ theo mô-đun, giúp khách hàng lựa chọn đúng phương án theo mục tiêu dự án. Mỗi dịch vụ đều hướng tới khả năng vận hành thực tế và tối ưu chi phí dài hạn.
-            </motion.p>
-          </div>
+          <StaggerContainer className="flex flex-col gap-8 max-w-4xl">
+            <FadeInView direction="down">
+              <h1 className="text-4xl md:text-8xl font-black tracking-tight text-white uppercase leading-tight">
+                Dịch vụ của <br />
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Minh Châu</span>
+              </h1>
+            </FadeInView>
+            <FadeInView delay={0.2}>
+              <p className="text-xl md:text-3xl text-slate-400 leading-relaxed font-medium">
+                Cung cấp giải pháp theo mô-đun, hướng tới khả năng vận hành thực tế và tối ưu chi phí dài hạn.
+              </p>
+            </FadeInView>
+          </StaggerContainer>
         </Container>
       </section>
 
@@ -98,59 +100,68 @@ export default function ServicesPage() {
         <Container>
           <div className="flex flex-col gap-32">
             {services.map((service, i) => (
-              <motion.div
+              <FadeInView
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
+                delay={0.1}
                 className={cn(
-                  "flex flex-col lg:flex-row gap-16 items-center",
+                  "flex flex-col lg:flex-row gap-20 items-center",
                   i % 2 === 1 ? "lg:flex-row-reverse" : ""
                 )}
               >
-                <div className="flex-1 flex flex-col gap-10">
-                  <div className="flex flex-col gap-6">
-                    <div className={cn("w-20 h-20 rounded-3xl bg-linear-to-br p-0.5 shadow-xl", service.color)}>
-                      <div className="w-full h-full bg-slate-950 rounded-[22px] flex items-center justify-center">
-                        <service.icon className="w-10 h-10 text-white" />
+                <StaggerContainer className="flex-1 flex flex-col gap-10">
+                  <div className="flex flex-col gap-8">
+                    <FadeInView direction="up">
+                      <div className={cn("w-24 h-24 rounded-3xl bg-linear-to-br p-0.5 shadow-2xl", service.color)}>
+                        <div className="w-full h-full bg-slate-950 rounded-[22px] flex items-center justify-center">
+                          <service.icon className="w-12 h-12 text-white" />
+                        </div>
                       </div>
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight uppercase tracking-tight">{service.title}</h2>
-                    <p className="text-lg text-slate-400 leading-relaxed">
-                      {service.desc}
-                    </p>
+                    </FadeInView>
+                    <FadeInView direction="up" delay={0.1}>
+                      <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase tracking-tighter italic px-4 -ml-4">{service.title}</h2>
+                    </FadeInView>
+                    <FadeInView direction="up" delay={0.2}>
+                      <p className="text-xl text-slate-400 leading-relaxed font-medium">
+                        {service.desc}
+                      </p>
+                    </FadeInView>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {service.bullets.map((bullet, idx) => (
-                      <div key={idx} className="flex gap-4 p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-lg">
-                        <CheckCircle2 className="w-6 h-6 text-cyan-500 shrink-0 group-hover:scale-110 transition-transform" />
-                        <span className="text-slate-200 font-bold text-sm leading-tight">{bullet}</span>
-                      </div>
+                      <FadeInView key={idx} delay={0.3 + idx * 0.1} direction="left">
+                        <div className="flex gap-5 p-6 rounded-[28px] bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-xl hover:bg-slate-800/40">
+                          <CheckCircle2 className="w-6 h-6 text-cyan-500 shrink-0 group-hover:scale-125 transition-transform" />
+                          <span className="text-slate-200 font-black text-sm uppercase tracking-wider leading-tight">{bullet}</span>
+                        </div>
+                      </FadeInView>
                     ))}
                   </div>
 
-                  <Link href="/contact" className="w-fit px-10 py-5 bg-cyan-600 hover:bg-cyan-500 text-white font-black rounded-2xl shadow-2xl shadow-cyan-900/30 transition-all flex items-center gap-3 uppercase tracking-wider text-sm">
-                    {service.cta} <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </div>
+                  <FadeInView delay={0.6}>
+                    <Link href="/contact" className="w-fit px-12 py-6 bg-cyan-600 hover:bg-cyan-500 text-white font-black rounded-2xl shadow-3xl shadow-cyan-900/40 transition-all flex items-center gap-4 uppercase tracking-[0.2em] text-sm hover:scale-105 active:scale-95">
+                      {service.cta} <ArrowRight className="w-6 h-6" />
+                    </Link>
+                  </FadeInView>
+                </StaggerContainer>
 
-                <div className="flex-1 w-full aspect-square bg-slate-950 rounded-[60px] overflow-hidden border border-slate-800 relative group shadow-2xl">
-                   <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                   <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="relative">
-                        <div className={cn("absolute inset-0 blur-[60px] opacity-20", service.color.replace('from-', 'bg-'))} />
-                        <service.icon className="w-48 h-48 text-slate-800 transition-all duration-700 group-hover:text-cyan-500/20 group-hover:scale-125 group-hover:rotate-12 relative z-10" />
-                      </div>
-                   </div>
-                   {/* Decorative elements */}
-                   <div className="absolute top-12 left-12 w-24 h-px bg-linear-to-r from-cyan-500/50 to-transparent" />
-                   <div className="absolute top-12 left-12 h-24 w-px bg-linear-to-b from-cyan-500/50 to-transparent" />
-                   <div className="absolute bottom-12 right-12 w-24 h-px bg-linear-to-l from-cyan-500/50 to-transparent" />
-                   <div className="absolute bottom-12 right-12 h-24 w-px bg-linear-to-t from-cyan-500/50 to-transparent" />
+                <div className="flex-1 w-full aspect-square bg-slate-950 rounded-[80px] overflow-hidden border border-slate-800 relative group shadow-3xl">
+                  <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative">
+                      <div className={cn("absolute inset-0 blur-[100px] opacity-30", service.color.replace('from-', 'bg-'))} />
+                      <BlurInView delay={0.4}>
+                        <service.icon className="w-64 h-64 text-slate-900 transition-all duration-1000 group-hover:text-cyan-500/10 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
+                      </BlurInView>
+                    </div>
+                  </div>
+                  {/* Decorative elements */}
+                  <div className="absolute top-16 left-16 w-32 h-px bg-linear-to-r from-cyan-500/50 to-transparent" />
+                  <div className="absolute top-16 left-16 h-32 w-px bg-linear-to-b from-cyan-500/50 to-transparent" />
+                  <div className="absolute bottom-16 right-16 w-32 h-px bg-linear-to-l from-cyan-500/50 to-transparent" />
+                  <div className="absolute bottom-16 right-16 h-32 w-px bg-linear-to-t from-cyan-500/50 to-transparent" />
                 </div>
-              </motion.div>
+              </FadeInView>
             ))}
           </div>
         </Container>
@@ -159,18 +170,18 @@ export default function ServicesPage() {
       {/* Final CTA */}
       <section className="py-24 bg-slate-950">
         <Container>
-          <div className="bg-linear-to-br from-slate-900 to-slate-950 p-12 md:p-24 rounded-[40px] border border-slate-800 flex flex-col items-center text-center gap-10 shadow-3xl relative overflow-hidden">
-            <div className="absolute -top-32 -right-32 w-80 h-80 bg-cyan-500/10 blur-[120px] pointer-events-none" />
-            <div className="flex flex-col gap-6 max-w-3xl relative z-10">
-              <h2 className="text-3xl md:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase">Chưa chắc chọn dịch vụ nào?</h2>
-              <p className="text-xl text-slate-400 leading-relaxed">
-                Gửi mô tả yêu cầu, Minh Châu sẽ tư vấn mô hình phù hợp (trọn gói / thuê đội / SLA) và đề xuất lộ trình triển khai theo mục tiêu thực tế.
+          <FadeInView className="bg-linear-to-br from-slate-900 to-slate-950 p-16 md:p-32 rounded-[60px] border border-slate-800 flex flex-col items-center text-center gap-12 shadow-3xl relative overflow-hidden">
+            <div className="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/10 blur-[150px] pointer-events-none" />
+            <div className="flex flex-col gap-8 max-w-4xl relative z-10">
+              <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white leading-tight uppercase italic px-4 -ml-4">Chưa chắc chọn dịch vụ nào?</h2>
+              <p className="text-2xl text-slate-400 leading-relaxed font-medium">
+                Gửi mô tả yêu cầu, Minh Châu sẽ tư vấn mô hình phù hợp và đề xuất lộ trình triển khai theo mục tiêu thực tế.
               </p>
             </div>
-            <Link href="/contact" className="px-16 py-6 bg-white text-slate-950 font-black rounded-2xl shadow-2xl hover:bg-cyan-500 hover:text-white transition-all text-xl uppercase tracking-widest relative z-10">
-              Gửi yêu cầu tư vấn
+            <Link href="/contact" className="px-20 py-8 bg-white text-slate-950 font-black rounded-3xl shadow-3xl hover:bg-cyan-500 hover:text-white transition-all text-2xl uppercase tracking-[0.3em] relative z-10 hover:scale-110 active:scale-95">
+              Tư vấn ngay
             </Link>
-          </div>
+          </FadeInView>
         </Container>
       </section>
     </div>
