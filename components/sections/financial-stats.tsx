@@ -59,9 +59,9 @@ export default function FinancialStats() {
       `}</style>
       <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 blur-[100px] pointer-events-none" />
       <Container>
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <StaggerContainer className="flex flex-col gap-10">
-            <div className="flex flex-col gap-6">
+        <div className=" gap-16 items-center">
+          <StaggerContainer className="flex gap-50">
+            <div className="flex flex-col gap-6 pt-16">
               <FadeInView direction="left">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight   leading-[1.5]">
                   NĂNG LỰC TRIỂN KHAI <br />
@@ -75,7 +75,7 @@ export default function FinancialStats() {
               </FadeInView>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
                 { icon: Users, value: 56, suffix: "+", label: "Nhân sự chuyên môn", color: "text-cyan-500" },
                 { icon: Award, value: 86, suffix: "%", label: "Trình độ Đại học+", color: "text-blue-500" },
@@ -86,7 +86,7 @@ export default function FinancialStats() {
                   key={i}
                   direction="up"
                   delay={0.3 + i * 0.1}
-                  className="p-8 rounded-[32px] bg-slate-950 border border-slate-800 flex flex-col gap-3 group hover:border-cyan-500/30 transition-all duration-500"
+                  className="p-10 w-70 rounded-[32px] bg-slate-950 border border-slate-800 flex flex-col gap-3 group hover:border-cyan-500/30 transition-all duration-500"
                 >
                   <item.icon className={`w-10 h-10 ${item.color} mb-2 group-hover:scale-110 transition-transform`} />
                   <p className="text-3xl font-black text-white flex items-center">
@@ -102,75 +102,7 @@ export default function FinancialStats() {
             </div>
           </StaggerContainer>
 
-          <StaggerContainer className="grid grid-cols-1 gap-8">
-            {/* Total Assets Chart */}
-            <ScaleInView delay={0.4} className="p-10 rounded-[40px] bg-slate-950 border border-slate-800 shadow-3xl hover:border-cyan-500/20 transition-all duration-700">
-              <div className="flex justify-between items-center mb-8">
-                <h3 className="text-xl font-black text-white uppercase tracking-tight">Tổng tài sản (VNĐ)</h3>
-                <div className="px-4 py-1.5 bg-cyan-600 text-white text-[10px] font-black rounded-full uppercase tracking-widest">
-                  Năm 2024
-                </div>
-              </div>
-              <div className="h-64 w-full">
-                {mounted && (
-                  <BlurInView delay={0.6} className="h-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={assetData}>
-                        <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} dy={10} />
-                        <Tooltip
-                          content={<CustomTooltip suffix=" đ" />}
-                          cursor={false}
-                        />
-                        <Bar dataKey="total" radius={[8, 8, 8, 8]}>
-                          {assetData.map((entry, index) => (
-                            <Cell 
-                              key={`cell-${index}`} 
-                              fill={index === 2 ? '#06b6d4' : '#1e3046'} 
-                              className="transition-all duration-500 hover:opacity-80 cursor-pointer"
-                            />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </BlurInView>
-                )}
-              </div>
-              <p className="mt-6 text-xs text-slate-500 italic font-medium uppercase tracking-wider text-center">
-                * Số liệu tài chính minh bạch theo hồ sơ năng lực 2024
-              </p>
-            </ScaleInView>
-
-            {/* Growth Trend Chart */}
-            <ScaleInView delay={0.6} className="p-10 rounded-[40px] bg-slate-950 border border-slate-800 shadow-3xl hover:border-cyan-500/20 transition-all duration-700">
-              <div className="flex justify-between items-center mb-8">
-                <h3 className="text-xl font-black text-white uppercase tracking-tight">Xu hướng tăng trưởng</h3>
-                <div className="flex items-center gap-2 text-emerald-400 text-sm font-black uppercase tracking-wider">
-                  <TrendingUp className="w-5 h-5" />
-                  +28% YoY
-                </div>
-              </div>
-              <div className="h-44 w-full">
-                {mounted && (
-                  <BlurInView delay={0.8} className="h-full">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={revenueTrend}>
-                        <defs>
-                          <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#06b6d4" stopOpacity={0.4} />
-                            <stop offset="95%" stopColor="#06b6d4" stopOpacity={0} />
-                          </linearGradient>
-                        </defs>
-                        <Tooltip
-                          content={<CustomTooltip suffix="%" />}
-                        />
-                        <Area type="monotone" dataKey="value" stroke="#06b6d4" strokeWidth={4} fillOpacity={1} fill="url(#colorValue)" />
-                      </AreaChart>
-                    </ResponsiveContainer>
-                  </BlurInView>
-                )}
-              </div>
-            </ScaleInView>
-          </StaggerContainer>
+          
         </div>
       </Container>
     </section>

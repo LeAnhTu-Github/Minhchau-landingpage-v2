@@ -170,14 +170,11 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="p-6 z-10 flex flex-col gap-4 flex-1">
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-3">
                     <p className="text-white/60 font-bold text-sm tracking-tight uppercase italic">{project.client}</p>
                     <h4 className="text-lg font-extrabold text-white leading-tight uppercase group-hover:text-cyan-400 transition-colors">{project.title}</h4>
                   </div>
-                  <div className="mt-auto pt-4 border-t border-slate-800/50 flex items-center justify-between">
-                    <p className="text-cyan-500 font-bold text-sm uppercase">{project.value}</p>
-                    <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-cyan-500 group-hover:translate-x-2 transition-all" />
-                  </div>
+
                 </div>
               </ScaleInView>
             ))}

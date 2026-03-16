@@ -95,7 +95,7 @@ export default function AboutPage() {
                 Đội ngũ là <span className="inline-block py-2 -my-2  text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Nền tảng</span>
               </h2>
               <p className="text-xl text-slate-400 leading-relaxed font-medium">
-                Minh Châu có quy mô <span className="text-white font-black">56 nhân sự</span>, tỷ lệ trình độ Đại học trở lên đạt <span className="text-white font-black">86%</span>.
+                Minh Châu có quy mô <span className="text-white font-black">56+ nhân sự</span>, tỷ lệ trình độ Đại học trở lên đạt <span className="text-white font-black">86%</span>.
               </p>
             </FadeInView>
 
@@ -112,7 +112,7 @@ export default function AboutPage() {
                 </div>
                 <StaggerContainer className="flex items-center gap-16 shrink-0">
                   <FadeInView direction="up" delay={0.6} className="text-center">
-                    <span className="block text-6xl font-black text-cyan-500 mb-2 tracking-tighter">56</span>
+                    <span className="block text-6xl font-black text-cyan-500 mb-2 tracking-tighter">56+</span>
                     <span className="text-xs uppercase font-black tracking-[0.5em] text-slate-500">Nhân sự</span>
                   </FadeInView>
                   <div className="w-px h-24 bg-slate-800 hidden md:block" />

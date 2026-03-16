@@ -77,12 +77,7 @@ export function ProjectList() {
                     <p className="text-white/60 font-bold text-sm tracking-tight uppercase italic">{project.client}</p>
                     <h4 className="text-lg font-extrabold text-white leading-tight uppercase group-hover:text-cyan-400 transition-colors">{project.title}</h4>
                   </div>
-                  <div className="mt-auto pt-4 border-t border-slate-800/50 flex items-center justify-between font-black text-[9px] uppercase tracking-[0.2em]">
-                    <p className="text-cyan-500 font-bold text-sm uppercase">{project.value}</p>
-                    <div className="flex items-center gap-2 text-white/50 group/btn hover:text-cyan-400 transition-colors">
-                      Chi tiết <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1.5 transition-transform duration-500" />
-                    </div>
-                  </div>
+ 
                 </div>
             </motion.div>
           ))}

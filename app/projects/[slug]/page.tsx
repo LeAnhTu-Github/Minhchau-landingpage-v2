@@ -34,9 +34,7 @@ export default function ProjectDetailPage() {
             <h1 className="text-3xl md:text-6xl font-extrabold text-white leading-tight uppercase">
               {project.title}
             </h1>
-            <p className="text-2xl font-bold text-cyan-500">
-              Giá trị hợp đồng: {project.value}
-            </p>
+
           </div>
         </Container>
       </section>
