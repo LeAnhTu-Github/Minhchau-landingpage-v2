@@ -1,11 +1,10 @@
-"use client";
+ "use client";
 
-import Link from "next/link";
-import { ArrowRight, Terminal, ShieldCheck, Zap } from "lucide-react";
-import { motion } from "framer-motion";
-import { ImageWithFallback } from "@/components/ui/image-with-fallback";
-import { Container } from "@/components/ui/container";
-import { FadeInView, BlurInView, ScaleInView, StaggerContainer } from "@/components/ui/animations";
+ import Link from "next/link";
+ import { ArrowRight, Terminal, ShieldCheck, Zap } from "lucide-react";
+ import { ImageWithFallback } from "@/components/ui/image-with-fallback";
+ import { Container } from "@/components/ui/container";
+ import { FadeInView, BlurInView, ScaleInView, StaggerContainer } from "@/components/ui/animations";
 
 export default function Hero() {
   return (
@@ -104,13 +103,11 @@ export default function Hero() {
               <div className="absolute -bottom-14 -left-14 w-64 h-64 bg-blue-600/20 rounded-full blur-[100px] animate-pulse delay-700" />
 
               {/* Animated floating elements */}
-              <motion.div
-                animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -left-4 w-24 h-24 bg-linear-to-br from-cyan-500/20 to-transparent backdrop-blur-3xl rounded-3xl border border-white/10 z-20 flex items-center justify-center shadow-2xl"
+              <div
+                className="absolute -top-4 -left-4 w-24 h-24 bg-linear-to-br from-cyan-500/20 to-transparent backdrop-blur-3xl rounded-3xl border border-white/10 z-20 flex items-center justify-center shadow-2xl animate-float-zap"
               >
                 <Zap className="w-10 h-10 text-cyan-400" />
-              </motion.div>
+              </div>
             </ScaleInView>
           </FadeInView>
         </div>

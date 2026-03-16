@@ -174,3 +174,19 @@
 .aos-animate.aos-blur-start {
   filter: blur(0px);
 }
+
+@keyframes float-zap {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.animate-float-zap {
+  animation: float-zap 4s ease-in-out infinite;
+}
