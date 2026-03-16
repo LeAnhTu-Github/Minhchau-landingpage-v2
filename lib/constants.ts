@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
     client: "VNPT Vĩnh Phúc",
     value: "850.000.000 VNĐ",
     category: "Viễn thông",
-    img: "https://media-vnpt.vnptvas.vn/Media/Images/upload_images/images/202506/img_vm_2506241423417453.jpg", // Replace standard with local if available, keeping local for consistency if provided
+    img: "/projects/scall-vnpt.jpg",
     desc: "Nâng cấp hệ thống lõi để đáp ứng tải cao và tích hợp tính năng viễn thông mới.",
     problem: "Hệ thống tổng đài di động cũ của VNPT Vĩnh Phúc gặp hiện tượng nghẽn mạch khi tải cao và thiếu khả năng tích hợp linh hoạt các dịch vụ GTGT mới.",
     solution: "Minh Châu thực hiện nâng cấp core hệ thống, tối ưu hóa database và xây dựng API gateway để kết nối các dịch vụ ngoại vi. Quy trình được thực hiện theo từng bước, có POC kiểm chứng trước khi chuyển đổi toàn diện.",
@@ -126,7 +126,7 @@ export const PROJECTS: Project[] = [
     client: "Dự án sửa chữa",
     value: "966.175.041 VNĐ",
     category: "Viễn thông",
-    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51",
+    img: "https://images.unsplash.com/photo-1551434678-e076c223a692",
     desc: "Xử lý lỗi logic trong luồng chuyển mạng online và bảo trì định kỳ.",
     problem: "Hệ thống chuyển mạng giữ số (MNP) hiện hữu gặp lỗi trong quá trình liên thông dữ liệu giữa các nhà mạng, gây gián đoạn dịch vụ cho người dùng.",
     solution: "Phân tích log, fix lỗi logic trong kết nối SS7/IP và bổ sung các kịch bản kiểm thử (test cases) để đảm bảo không tái phát lỗi sau khi sửa chữa.",
