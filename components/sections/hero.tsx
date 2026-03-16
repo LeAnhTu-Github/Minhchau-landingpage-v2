@@ -28,16 +28,13 @@ export default function Hero() {
             </FadeInView>
 
             <FadeInView direction="right" delay={0.2} distance={60}>
-              <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.1] text-white tracking-tight">
-                Giải pháp CNTT <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">
-                  Triển khai nhanh, vận hành bền vững
-                </span>
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] text-white tracking-tight">
+                Giải pháp CNTT <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">Triển khai nhanh, vận hành bền vững</span>
               </h1>
             </FadeInView>
 
             <FadeInView direction="right" delay={0.4} distance={40}>
-              <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
+              <p className="text-base text-slate-400 leading-relaxed max-w-xl">
                 Minh Châu cung cấp dịch vụ phát triển phần mềm, tích hợp hệ thống, vận hành–bảo trì theo SLA và kiểm thử QA. Chúng tôi tập trung vào hiệu quả triển khai thực tế: hệ thống chạy ổn định, quy trình nghiệm thu rõ ràng.
               </p>
             </FadeInView>

@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
     client: "VNPT Vĩnh Phúc",
     value: "850.000.000 VNĐ",
     category: "Viễn thông",
-    img: "/projects/scall-vnpt.jpg",
+    img: "/projects/vnpt-scall.jpg",
     desc: "Nâng cấp hệ thống lõi để đáp ứng tải cao và tích hợp tính năng viễn thông mới.",
     problem: "Hệ thống tổng đài di động cũ của VNPT Vĩnh Phúc gặp hiện tượng nghẽn mạch khi tải cao và thiếu khả năng tích hợp linh hoạt các dịch vụ GTGT mới.",
     solution: "Minh Châu thực hiện nâng cấp core hệ thống, tối ưu hóa database và xây dựng API gateway để kết nối các dịch vụ ngoại vi. Quy trình được thực hiện theo từng bước, có POC kiểm chứng trước khi chuyển đổi toàn diện.",

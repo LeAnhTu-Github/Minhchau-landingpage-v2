@@ -19,13 +19,12 @@ export default function ContactPage() {
         <Container className="relative z-10">
           <StaggerContainer className="flex flex-col items-center text-center gap-10">
             <FadeInView direction="down">
-              <h1 className="text-5xl md:text-9xl font-black text-white tracking-tighter leading-[1.2] uppercase py-2">
-                Liên hệ <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 italic px-4 -ml-4">Minh Châu</span>
+              <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.2] uppercase py-2">
+                Liên hệ <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 italic px-4 -mx-4">Minh Châu</span>
               </h1>
             </FadeInView>
             <FadeInView delay={0.2}>
-              <p className="text-xl md:text-3xl text-slate-400 leading-relaxed max-w-4xl mx-auto font-medium">
+              <p className="text-lg md:text-2xl text-slate-400 leading-relaxed max-w-4xl mx-auto font-medium">
                 Hãy cho chúng tôi biết mục tiêu dự án của bạn. <br className="hidden md:block" />
                 Minh Châu sẽ phản hồi phương án tối ưu trong vòng 8 giờ làm việc.
               </p>
@@ -103,7 +102,7 @@ export default function ContactPage() {
         <Container>
           <FadeInView className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20 gap-6">
             <h2 className="text-sm font-black tracking-[0.5em] text-cyan-500 uppercase">Hỏi & Đáp</h2>
-            <h3 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter">Giải đáp nhanh</h3>
+            <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">Giải đáp nhanh</h3>
           </FadeInView>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

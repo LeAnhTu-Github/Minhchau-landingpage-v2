@@ -30,18 +30,18 @@ export default function Home() {
         <Container>
           <FadeInView className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 gap-4">
             <h2 className="text-sm font-bold tracking-widest text-cyan-500 uppercase">Dịch vụ cốt lõi</h2>
-            <h3 className="text-3xl md:text-6xl font-extrabold text-white tracking-tight uppercase">Dịch vụ của Minh Châu</h3>
-            <p className="text-slate-400 text-lg">
+            <h3 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight uppercase">Dịch vụ của Minh Châu</h3>
+            <p className="text-slate-400 text-base">
               Chúng tôi xây dựng dịch vụ theo mô-đun để phù hợp nhiều loại dự án, từ triển khai trọn gói đến vận hành chuyên nghiệp.
             </p>
           </FadeInView>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service, i) => (
               <FadeInView
                 key={i}
                 delay={i * 0.1}
-                className="group p-10 rounded-[32px] bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all duration-500 hover:bg-slate-800/40 relative overflow-hidden"
+                className="group p-8 rounded-[24px] bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all duration-500 hover:bg-slate-800/40 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-linear-to-br from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className={`w-16 h-16 rounded-2xl bg-linear-to-br ${service.color} p-0.5 mb-8 group-hover:scale-110 transition-transform duration-500 shadow-xl`}>
@@ -49,8 +49,8 @@ export default function Home() {
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{service.title}</h4>
-                <p className="text-slate-400 leading-relaxed mb-8">
+                <h4 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{service.title}</h4>
+                <p className="text-slate-400 text-sm leading-relaxed mb-8">
                   {service.desc}
                 </p>
                 <Link href="/services" className="text-sm font-bold text-cyan-500 flex items-center gap-2 group/link uppercase tracking-wider">
@@ -95,12 +95,12 @@ export default function Home() {
                   <h2 className="text-sm font-bold tracking-[0.3em] text-cyan-500 uppercase">Giá trị cốt lõi</h2>
                 </FadeInView>
                 <FadeInView direction="left" delay={0.1}>
-                  <h3 className="text-4xl md:text-6xl font-extrabold text-white leading-tight uppercase tracking-tight">Chuyên nghiệp triển khai – Rõ ràng bàn giao</h3>
+                  <h3 className="text-3xl md:text-4xl font-extrabold text-white leading-tight uppercase tracking-tight">Chuyên nghiệp triển khai – Rõ ràng bàn giao</h3>
                 </FadeInView>
               </div>
 
               <FadeInView direction="left" delay={0.2}>
-                <p className="text-slate-400 text-xl leading-relaxed">
+                <p className="text-slate-400 text-lg leading-relaxed">
                   Với Minh Châu, “xong dự án” không chỉ là hoàn thành code. Chúng tôi ưu tiên kiểm soát rủi ro bằng phạm vi rõ ràng, kế hoạch kiểm thử phù hợp.
                 </p>
               </FadeInView>
@@ -115,7 +115,7 @@ export default function Home() {
                     <div className="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/20 transition-all">
                       <CheckCircle2 className="w-5 h-5 text-cyan-500" />
                     </div>
-                    <p className="text-slate-200 font-bold text-lg">{item}</p>
+                    <p className="text-slate-200 font-bold text-base">{item}</p>
                   </FadeInView>
                 ))}
               </div>
@@ -138,8 +138,8 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <FadeInView className="flex flex-col gap-4 max-w-2xl">
               <h2 className="text-sm font-bold tracking-[0.3em] text-cyan-500 uppercase">Dự án thực tế</h2>
-              <h3 className="text-3xl md:text-6xl font-extrabold text-white uppercase tracking-tight">Hợp đồng tiêu biểu</h3>
-              <p className="text-slate-400 text-xl font-medium">
+              <h3 className="text-2xl md:text-4xl font-extrabold text-white uppercase tracking-tight">Hợp đồng tiêu biểu</h3>
+              <p className="text-slate-400 text-lg font-medium">
                 Kinh nghiệm triển khai thực tế trên nhiều quy mô và lĩnh vực khác nhau.
               </p>
             </FadeInView>
@@ -150,12 +150,12 @@ export default function Home() {
             </FadeInView>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {PROJECTS.map((project, i) => (
               <ScaleInView
                 key={i}
                 delay={i * 0.1}
-                className="group relative rounded-[40px] overflow-hidden border border-slate-800 bg-slate-900/50 h-full hover:border-cyan-500/30 transition-all duration-500 shadow-xl"
+                className="group relative rounded-[24px] overflow-hidden border border-slate-800 bg-slate-900/50 h-full hover:border-cyan-500/30 transition-all duration-500 shadow-xl flex flex-col"
               >
                 <Link href={`/projects/${project.id}`} className="absolute inset-0 z-20" />
                 <div className="aspect-16/11 overflow-hidden relative">
@@ -169,12 +169,14 @@ export default function Home() {
                     {project.category}
                   </span>
                 </div>
-                <div className="p-10 z-10 flex flex-col gap-4">
-                  <p className="text-cyan-500 text-xs font-black uppercase tracking-[0.2em]">{project.client}</p>
-                  <h4 className="text-2xl font-extrabold text-white mb-2 leading-tight uppercase group-hover:text-cyan-400 transition-colors">{project.title}</h4>
-                  <div className="mt-4 pt-6 border-t border-slate-800 flex items-center justify-between">
-                    <p className="text-white font-black text-lg">{project.value}</p>
-                    <ArrowRight className="w-5 h-5 text-slate-500 group-hover:text-cyan-500 group-hover:translate-x-2 transition-all" />
+                <div className="p-6 z-10 flex flex-col gap-4 flex-1">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-white/60 font-bold text-sm tracking-tight uppercase italic">{project.client}</p>
+                    <h4 className="text-lg font-extrabold text-white leading-tight uppercase group-hover:text-cyan-400 transition-colors">{project.title}</h4>
+                  </div>
+                  <div className="mt-auto pt-4 border-t border-slate-800/50 flex items-center justify-between">
+                    <p className="text-cyan-500 font-bold text-sm uppercase">{project.value}</p>
+                    <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-cyan-500 group-hover:translate-x-2 transition-all" />
                   </div>
                 </div>
               </ScaleInView>
@@ -189,21 +191,21 @@ export default function Home() {
         <Container>
           <FadeInView className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20 gap-6">
             <h2 className="text-sm font-bold tracking-[0.4em] text-cyan-500 uppercase">Quy trình làm việc</h2>
-            <h3 className="text-4xl md:text-7xl font-extrabold text-white uppercase tracking-tight leading-[1.2] py-2">Triển khai rõ ràng</h3>
-            <p className="text-slate-400 text-xl font-medium">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight leading-[1.2] py-2">Triển khai rõ ràng</h3>
+            <p className="text-slate-400 text-lg font-medium">
               Kiểm soát tiến độ và chất lượng, giảm thiểu rủi ro tối đa cho đối tác.
             </p>
           </FadeInView>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-8">
             {processSteps.map((p, i) => (
-              <FadeInView key={i} delay={i * 0.1} className="relative p-10 rounded-[35px] bg-slate-900 border border-slate-800 flex flex-col gap-6 group hover:border-cyan-500/20 transition-all duration-500 shadow-xl overflow-hidden">
+              <FadeInView key={i} delay={i * 0.1} className="relative p-8 rounded-[30px] bg-slate-900 border border-slate-800 flex flex-col gap-4 group hover:border-cyan-500/20 transition-all duration-500 shadow-xl overflow-hidden">
                 <div className="absolute inset-0 bg-linear-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="text-7xl font-black text-slate-800/40 group-hover:text-cyan-500/10 transition-colors absolute top-6 right-10 select-none italic">
                   {p.step}
                 </div>
-                <h4 className="text-2xl font-black text-white relative z-10 uppercase tracking-tight group-hover:text-cyan-400 transition-colors">{p.title}</h4>
-                <p className="text-slate-400 text-lg relative z-10 leading-relaxed font-medium">{p.desc}</p>
+                <h4 className="text-xl font-black text-white relative z-10 uppercase tracking-tight group-hover:text-cyan-400 transition-colors">{p.title}</h4>
+                <p className="text-slate-400 text-base relative z-10 leading-relaxed font-medium">{p.desc}</p>
               </FadeInView>
             ))}
           </StaggerContainer>
@@ -223,11 +225,10 @@ export default function Home() {
             <div className="absolute -top-32 -left-32 w-80 h-80 bg-cyan-500/20 blur-[120px] pointer-events-none animate-pulse" />
             <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-blue-600/10 blur-[120px] pointer-events-none animate-pulse delay-1000" />
 
-            <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.1] max-w-4xl uppercase tracking-tighter">
-              Bắt đầu hành trình <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Kỹ thuật số bền vững</span>
+            <h2 className="text-3xl md:text-4xl font-black text-white leading-[1.1] max-w-5xl uppercase tracking-tighter italic px-4 -mx-4">
+              Bắt đầu hành trình <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Kỹ thuật số bền vững</span>
             </h2>
-            <p className="text-slate-400 text-xl max-w-3xl font-medium leading-relaxed">
+            <p className="text-slate-400 text-lg max-w-3xl font-medium leading-relaxed">
               Minh Châu sẵn sàng đồng hành cùng bạn từ ý tưởng đến vận hành thực tế. Hãy để chúng tôi làm rõ nhu cầu và đề xuất phương án tối ưu nhất.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 relative z-10 pt-4">

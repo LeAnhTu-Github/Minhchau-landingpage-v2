@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip, Cell, AreaChart, Area } from "recharts";
 import { TrendingUp, Users, Award, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { FadeInView, ScaleInView, StaggerContainer, BlurInView, NumberTicker } from "@/components/ui/animations";
+import { FadeInView, ScaleInView, StaggerContainer, BlurInView } from "@/components/ui/animations";
 
 const assetData = [
   { name: "2022", total: 3200000000 },
@@ -62,13 +62,13 @@ export default function FinancialStats() {
           <StaggerContainer className="flex flex-col gap-10">
             <div className="flex flex-col gap-6">
               <FadeInView direction="left">
-                <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight uppercase leading-tight">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight">
                   Năng lực triển khai <br />
                   <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">CÓ THỂ KIỂM CHỨNG</span>
                 </h2>
               </FadeInView>
               <FadeInView direction="left" delay={0.2}>
-                <p className="text-slate-400 text-lg leading-relaxed max-w-xl font-medium">
+                <p className="text-slate-400 text-base leading-relaxed max-w-xl font-medium">
                   Minh Châu duy trì năng lực tổ chức ổn định với quy mô 56 nhân sự chuyên môn cao. Chúng tôi minh bạch các chỉ tiêu tài chính để đảm bảo sự tin cậy tuyệt đối cho mọi đối tác.
                 </p>
               </FadeInView>
@@ -88,14 +88,14 @@ export default function FinancialStats() {
                   className="p-8 rounded-[32px] bg-slate-950 border border-slate-800 flex flex-col gap-3 group hover:border-cyan-500/30 transition-all duration-500"
                 >
                   <item.icon className={`w-10 h-10 ${item.color} mb-2 group-hover:scale-110 transition-transform`} />
-                  <p className="text-4xl font-black text-white flex items-center">
+                  <p className="text-3xl font-black text-white flex items-center">
                     {item.prefix && <span className="mr-1">{item.prefix}</span>}
                     {item.value > 0 ? (
-                      <NumberTicker value={item.value} delay={0.5 + i * 0.1} />
+                      <span>{item.value}</span>
                     ) : null}
                     {item.suffix && <span>{item.suffix}</span>}
                   </p>
-                  <p className="text-sm text-slate-400 font-bold uppercase tracking-widest">{item.label}</p>
+                  <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">{item.label}</p>
                 </FadeInView>
               ))}
             </div>

@@ -31,7 +31,7 @@ export default function ProjectDetailPage() {
               <span className="text-slate-500">|</span>
               <span className="text-white font-medium">{project.client}</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight uppercase">
+            <h1 className="text-3xl md:text-6xl font-extrabold text-white leading-tight uppercase">
               {project.title}
             </h1>
             <p className="text-2xl font-bold text-cyan-500">

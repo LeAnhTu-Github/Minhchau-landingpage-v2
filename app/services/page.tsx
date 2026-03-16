@@ -23,13 +23,12 @@ export default function ServicesPage() {
         <Container className="relative z-10">
           <StaggerContainer className="flex flex-col gap-8 max-w-4xl">
             <FadeInView direction="down">
-              <h1 className="text-5xl md:text-9xl font-black tracking-tighter text-white uppercase leading-[1.2] py-2">
-                Dịch vụ <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">Minh Châu</span>
+              <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-[1.2] py-2">
+                Dịch vụ <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 px-4 -mx-4">Minh Châu</span>
               </h1>
             </FadeInView>
             <FadeInView delay={0.2}>
-              <p className="text-xl md:text-3xl text-slate-400 leading-relaxed font-medium">
+              <p className="text-lg md:text-2xl text-slate-400 leading-relaxed font-medium">
                 Cung cấp giải pháp theo mô-đun, hướng tới khả năng vận hành thực tế và tối ưu chi phí dài hạn.
               </p>
             </FadeInView>
@@ -60,10 +59,10 @@ export default function ServicesPage() {
                       </div>
                     </FadeInView>
                     <FadeInView direction="up" delay={0.1}>
-                      <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase tracking-tighter italic px-4 -ml-4">{service.title}</h2>
+                      <h2 className="text-3xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter italic px-4 -ml-4">{service.title}</h2>
                     </FadeInView>
                     <FadeInView direction="up" delay={0.2}>
-                      <p className="text-xl text-slate-400 leading-relaxed font-medium">
+                      <p className="text-lg text-slate-400 leading-relaxed font-medium">
                         {service.desc}
                       </p>
                     </FadeInView>
@@ -115,8 +114,8 @@ export default function ServicesPage() {
           <FadeInView className="bg-linear-to-br from-slate-900 to-slate-950 p-16 md:p-32 rounded-[60px] border border-slate-800 flex flex-col items-center text-center gap-12 shadow-3xl relative overflow-hidden">
             <div className="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/10 blur-[150px] pointer-events-none" />
             <div className="flex flex-col gap-8 max-w-4xl relative z-10">
-              <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white leading-tight uppercase italic px-4 -ml-4">Chưa chắc chọn dịch vụ nào?</h2>
-              <p className="text-2xl text-slate-400 leading-relaxed font-medium">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-white leading-tight uppercase italic px-4 -mx-4">Chưa chắc chọn dịch vụ nào?</h2>
+              <p className="text-xl text-slate-400 leading-relaxed font-medium">
                 Gửi mô tả yêu cầu, Minh Châu sẽ tư vấn mô hình phù hợp và đề xuất lộ trình triển khai theo mục tiêu thực tế.
               </p>
             </div>

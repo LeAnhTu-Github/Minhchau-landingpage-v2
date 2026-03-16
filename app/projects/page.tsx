@@ -19,13 +19,12 @@ export default function ProjectsPage() {
         <Container className="relative z-10">
           <StaggerContainer className="flex flex-col gap-8 max-w-4xl">
             <FadeInView direction="down">
-              <h1 className="text-4xl md:text-8xl font-black tracking-tight text-white uppercase leading-tight">
-                Dự án <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Tiêu Biểu</span>
+              <h1 className="text-3xl md:text-6xl font-black tracking-tight text-white uppercase leading-tight">
+                Dự án <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Tiêu Biểu</span>
               </h1>
             </FadeInView>
             <FadeInView delay={0.2}>
-              <p className="text-xl md:text-3xl text-slate-400 leading-relaxed font-medium">
+              <p className="text-lg md:text-2xl text-slate-400 leading-relaxed font-medium">
                 Danh mục dự án thể hiện năng lực triển khai thực tế của Minh Châu trong các mảng phần mềm, tích hợp và multimedia.
               </p>
             </FadeInView>
@@ -46,8 +45,8 @@ export default function ProjectsPage() {
           <FadeInView className="bg-linear-to-br from-cyan-600 to-blue-700 p-16 md:p-32 rounded-[60px] shadow-3xl relative overflow-hidden group flex flex-col lg:flex-row items-center justify-between gap-16">
             <div className="absolute -right-32 -top-32 w-96 h-96 bg-white/10 rounded-full blur-[120px] group-hover:scale-150 transition-transform duration-1000" />
             <div className="flex flex-col gap-8 max-w-3xl text-center lg:text-left relative z-10">
-              <h2 className="text-4xl md:text-7xl font-black text-white leading-tight uppercase tracking-tighter italic px-4 -ml-4">Cần một giải <br /> pháp tương tự?</h2>
-              <p className="text-2xl text-cyan-50 font-medium opacity-90 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter italic px-4 -mx-4">Cần một giải pháp tương tự?</h2>
+              <p className="text-xl text-cyan-50 font-medium opacity-90 leading-relaxed">
                 Chúng tôi cam kết chất lượng triển khai và bàn giao đầy đủ tài liệu, hỗ trợ vận hành 24/7 theo cam kết SLA.
               </p>
             </div>
