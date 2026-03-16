@@ -1,234 +1,221 @@
-"use client";
+ "use client";
 
-import { motion, useScroll, useTransform, HTMLMotionProps } from "framer-motion";
-import { ReactNode, useRef } from "react";
+ import { ReactNode, useEffect, useRef, useState } from "react";
+ import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion";
 
-interface FadeInViewProps {
-  children: ReactNode;
-  delay?: number;
-  duration?: number;
-  direction?: "up" | "down" | "left" | "right" | "none";
-  className?: string;
-  distance?: number;
-}
+ interface FadeInViewProps {
+   children: ReactNode;
+   delay?: number;
+   duration?: number;
+   direction?: "up" | "down" | "left" | "right" | "none";
+   className?: string;
+   distance?: number;
+ }
 
-export function FadeInView({
-  children,
-  delay = 0,
-  duration = 0.5,
-  direction = "up",
-  className,
-  distance = 20
-}: FadeInViewProps) {
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: direction === "up" ? distance : direction === "down" ? -distance : 0,
-      x: direction === "left" ? distance : direction === "right" ? -distance : 0,
-      filter: "blur(4px)"
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      filter: "blur(0px)"
-    }
-  };
+ export function FadeInView({
+   children,
+   delay = 0,
+   duration = 0.5,
+   direction = "up",
+   className,
+   distance = 20
+ }: FadeInViewProps) {
+   const aosType =
+     direction === "up"
+       ? "fade-up"
+       : direction === "down"
+       ? "fade-down"
+       : direction === "left"
+       ? "fade-left"
+       : direction === "right"
+       ? "fade-right"
+       : "fade";
 
-  return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      transition={{
-        duration,
-        delay,
-        ease: [0.21, 0.47, 0.32, 0.98]
-      }}
-      viewport={{ once: true, margin: "-10% 0px" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
+   const delayMs = Math.max(0, Math.round(delay * 1000));
+   const durationMs = Math.max(0, Math.round(duration * 1000));
+   const offset = Math.max(0, Math.round(distance * 4));
 
-export function ScaleInView({
-  children,
-  delay = 0,
-  duration = 0.6,
-  className
-}: {
-  children: ReactNode;
-  delay?: number;
-  duration?: number;
-  className?: string
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-      transition={{
-        duration,
-        delay,
-        ease: [0.21, 0.47, 0.32, 0.98]
-      }}
-      viewport={{ once: true, margin: "-10% 0px" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
+   return (
+     <div
+       data-aos={aosType}
+       data-aos-delay={delayMs}
+       data-aos-duration={durationMs}
+       data-aos-offset={offset}
+       className={className}
+     >
+       {children}
+     </div>
+   );
+ }
 
-export function BlurInView({
-  children,
-  delay = 0,
-  duration = 0.8,
-  className
-}: {
-  children: ReactNode;
-  delay?: number;
-  duration?: number;
-  className?: string
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, filter: "blur(20px)" }}
-      whileInView={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration, delay, ease: "easeOut" }}
-      viewport={{ once: true }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
+ export function ScaleInView({
+   children,
+   delay = 0,
+   duration = 0.6,
+   className
+ }: {
+   children: ReactNode;
+   delay?: number;
+   duration?: number;
+   className?: string;
+ }) {
+   const delayMs = Math.max(0, Math.round(delay * 1000));
+   const durationMs = Math.max(0, Math.round(duration * 1000));
 
-export function RevealView({
-  children,
-  delay = 0,
-  duration = 0.8,
-  className
-}: {
-  children: ReactNode;
-  delay?: number;
-  duration?: number;
-  className?: string
-}) {
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <motion.div
-        initial={{ y: "100%" }}
-        whileInView={{ y: 0 }}
-        transition={{ duration, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-        viewport={{ once: true }}
-      >
-        {children}
-      </motion.div>
-    </div>
-  );
-}
+   return (
+     <div
+       data-aos="zoom-in"
+       data-aos-delay={delayMs}
+       data-aos-duration={durationMs}
+       className={className}
+     >
+       {children}
+     </div>
+   );
+ }
 
-export function StaggerContainer({
-  children,
-  delay = 0,
-  staggerDelay = 0.1,
-  className
-}: {
-  children: ReactNode;
-  delay?: number;
-  staggerDelay?: number;
-  className?: string
-}) {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: staggerDelay,
-        delayChildren: delay,
-      }
-    }
-  };
+ export function BlurInView({
+   children,
+   delay = 0,
+   duration = 0.8,
+   className
+ }: {
+   children: ReactNode;
+   delay?: number;
+   duration?: number;
+   className?: string;
+ }) {
+   const delayMs = Math.max(0, Math.round(delay * 1000));
+   const durationMs = Math.max(0, Math.round(duration * 1000));
 
-  return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
+   return (
+     <div
+       data-aos="fade"
+       data-aos-delay={delayMs}
+       data-aos-duration={durationMs}
+       className={`aos-blur-start ${className ?? ""}`}
+     >
+       {children}
+     </div>
+   );
+ }
 
-export function ParallaxView({
-  children,
-  offset = 50,
-  className
-}: {
-  children: ReactNode;
-  offset?: number;
-  className?: string
-}) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
+ export function RevealView({
+   children,
+   delay = 0,
+   duration = 0.8,
+   className
+ }: {
+   children: ReactNode;
+   delay?: number;
+   duration?: number;
+   className?: string;
+ }) {
+   const delayMs = Math.max(0, Math.round(delay * 1000));
+   const durationMs = Math.max(0, Math.round(duration * 1000));
 
-  const y = useTransform(scrollYProgress, [0, 1], [-offset, offset]);
+   return (
+     <div className={`relative overflow-hidden ${className ?? ""}`}>
+       <div
+         data-aos="fade-up"
+         data-aos-delay={delayMs}
+         data-aos-duration={durationMs}
+       >
+         {children}
+       </div>
+     </div>
+   );
+ }
 
-  return (
-    <motion.div ref={ref} style={{ y }} className={className}>
-      {children}
-    </motion.div>
-  );
-}
-import { useInView, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
+ export function StaggerContainer({
+   children,
+   delay = 0,
+   staggerDelay = 0.1,
+   className
+ }: {
+   children: ReactNode;
+   delay?: number;
+   staggerDelay?: number;
+   className?: string;
+ }) {
+   void staggerDelay;
+   void delay;
 
-export function NumberTicker({
-  value,
-  direction = "up",
-  delay = 0,
-  className
-}: {
-  value: number;
-  direction?: "up" | "down";
-  delay?: number;
-  className?: string
-}) {
-  const [displayValue, setDisplayValue] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref as any, { once: true, margin: "0px" });
+   return <div className={className}>{children}</div>;
+ }
 
-  const springValue = useSpring(0, {
-    mass: 1,
-    stiffness: 100,
-    damping: 30,
-  });
+ export function ParallaxView({
+   children,
+   offset = 50,
+   className
+ }: {
+   children: ReactNode;
+   offset?: number;
+   className?: string;
+ }) {
+   const ref = useRef(null);
+   const { scrollYProgress } = useScroll({
+     target: ref,
+     offset: ["start end", "end start"]
+   });
 
-  useEffect(() => {
-    if (isInView) {
-      setTimeout(() => {
-        springValue.set(value);
-      }, delay * 1000);
-    }
-  }, [isInView, springValue, value, delay]);
+   const y = useTransform(scrollYProgress, [0, 1], [-offset, offset]);
 
-  useEffect(() => {
-    return springValue.on("change", (latest) => {
-      setDisplayValue(Number(latest.toFixed(value % 1 === 0 ? 0 : 1)));
-    });
-  }, [springValue, value]);
+   return (
+     <motion.div ref={ref} style={{ y }} className={className}>
+       {children}
+     </motion.div>
+   );
+ }
 
-  return (
-    <span ref={ref} className={className}>
-      {displayValue}
-    </span>
-  );
-}
+ export function NumberTicker({
+   value,
+   direction = "up",
+   delay = 0,
+   className
+ }: {
+   value: number;
+   direction?: "up" | "down";
+   delay?: number;
+   className?: string;
+ }) {
+   const [displayValue, setDisplayValue] = useState(0);
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const isInView = useInView(ref, { once: true, margin: "0px" });
+
+   const springValue = useSpring(0, {
+     mass: 1,
+     stiffness: 100,
+     damping: 30
+   });
+
+   useEffect(() => {
+     if (!isInView) {
+       return;
+     }
+
+     const timeoutId = window.setTimeout(() => {
+       springValue.set(direction === "down" ? 0 - value : value);
+     }, delay * 1000);
+
+     return () => {
+       window.clearTimeout(timeoutId);
+     };
+   }, [isInView, springValue, value, delay, direction]);
+
+   useEffect(() => {
+     const unsubscribe = springValue.on("change", (latest) => {
+       const nextValue = direction === "down" ? 0 - Number(latest) : Number(latest);
+       const fractionDigits = value % 1 === 0 ? 0 : 1;
+       setDisplayValue(Number(nextValue.toFixed(fractionDigits)));
+     });
+
+     return unsubscribe;
+   }, [springValue, value, direction]);
+
+   return (
+     <span ref={ref} className={className}>
+       {displayValue}
+     </span>
+   );
+ }

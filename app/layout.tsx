@@ -3,6 +3,7 @@ import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { AosProvider } from "@/components/providers/aos-provider";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
@@ -68,11 +69,13 @@ export default function RootLayout({
       <body
         className={`${beVietnamPro.variable} font-sans antialiased dark bg-slate-950 text-slate-100 selection:bg-cyan-500/30 flex flex-col min-h-screen`}
       >
-        <Navbar />
-        <main className="grow pt-20">
-          {children}
-        </main>
-        <Footer />
+        <AosProvider>
+          <Navbar />
+          <main className="grow pt-20">
+            {children}
+          </main>
+          <Footer />
+        </AosProvider>
       </body>
     </html>
   );
