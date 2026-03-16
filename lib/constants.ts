@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
     client: "VNPT Vĩnh Phúc",
     value: "850.000.000 VNĐ",
     category: "Viễn thông",
-    img: "/projects/vr-360.jpg", // Replace standard with local if available, keeping local for consistency if provided
+    img: "https://media-vnpt.vnptvas.vn/Media/Images/upload_images/images/202506/img_vm_2506241423417453.jpg", // Replace standard with local if available, keeping local for consistency if provided
     desc: "Nâng cấp hệ thống lõi để đáp ứng tải cao và tích hợp tính năng viễn thông mới.",
     problem: "Hệ thống tổng đài di động cũ của VNPT Vĩnh Phúc gặp hiện tượng nghẽn mạch khi tải cao và thiếu khả năng tích hợp linh hoạt các dịch vụ GTGT mới.",
     solution: "Minh Châu thực hiện nâng cấp core hệ thống, tối ưu hóa database và xây dựng API gateway để kết nối các dịch vụ ngoại vi. Quy trình được thực hiện theo từng bước, có POC kiểm chứng trước khi chuyển đổi toàn diện.",
@@ -114,7 +114,7 @@ export const PROJECTS: Project[] = [
     client: "ICORP",
     value: "654.215.150 VNĐ",
     category: "Phần mềm",
-    img: "/projects/vr-360.jpg",
+    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
     desc: "Tối ưu hóa quy trình xử lý dữ liệu bảo hiểm và cải thiện giao diện quản trị.",
     problem: "Hệ thống quản lý BHXH tại ICORP cần đồng bộ hóa dữ liệu tập trung và nâng cấp giao diện người dùng để tăng hiệu suất xử lý hồ sơ.",
     solution: "Phát triển các module nghiệp vụ mới, tối ưu hóa quy trình nhập liệu và xây dựng hệ thống phân quyền/bảo mật đa lớp. Bàn giao đầy đủ tài liệu thiết kế và hướng dẫn nghiệm thu.",
@@ -126,7 +126,7 @@ export const PROJECTS: Project[] = [
     client: "Dự án sửa chữa",
     value: "966.175.041 VNĐ",
     category: "Viễn thông",
-    img: "/projects/vr-360.jpg",
+    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51",
     desc: "Xử lý lỗi logic trong luồng chuyển mạng online và bảo trì định kỳ.",
     problem: "Hệ thống chuyển mạng giữ số (MNP) hiện hữu gặp lỗi trong quá trình liên thông dữ liệu giữa các nhà mạng, gây gián đoạn dịch vụ cho người dùng.",
     solution: "Phân tích log, fix lỗi logic trong kết nối SS7/IP và bổ sung các kịch bản kiểm thử (test cases) để đảm bảo không tái phát lỗi sau khi sửa chữa.",
