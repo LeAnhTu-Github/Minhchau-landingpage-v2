@@ -29,7 +29,7 @@ export default function Hero() {
 
             <FadeInView direction="right" delay={0.2} distance={60}>
               <h1 className="uppercase text-4xl md:text-6xl font-extrabold leading-[1.35] text-white tracking-tight">
-                Giải pháp CNTT <span className="inline-block py-2 -my-2 text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">Triển khai nhanh, vận hành bền vững</span>
+                Giải pháp CNTT <span className="inline-block py-2 -my-2text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">Triển khai nhanh, vận hành bền vững</span>
               </h1>
             </FadeInView>
 
@@ -71,7 +71,7 @@ export default function Hero() {
 
           <FadeInView direction="left" delay={0.4} duration={1} distance={100} className="relative">
             <ScaleInView delay={0.6} duration={1} className="relative">
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20 border border-slate-800 group">
+              <div className=" relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20 border border-slate-800 group">
                 <BlurInView delay={0.6}>
                   <ImageWithFallback
                     src="https://images.unsplash.com/photo-1765561667528-28e39c6174dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwb2ZmaWNlJTIwdGVhbSUyMHdvcmtpbmd8ZW58MXx8fHwxNzczNjI2NzU4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -79,7 +79,7 @@ export default function Hero() {
                     width={1080}
                     height={810}
                     priority
-                    className="w-full h-auto aspect-4/3 object-cover transition-transform duration-[2s] group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                   />
                 </BlurInView>
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none" />

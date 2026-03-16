@@ -60,9 +60,9 @@ export function ProjectList() {
               className="group relative flex flex-col rounded-[24px] overflow-hidden border border-slate-800 bg-slate-900/50 h-full hover:border-cyan-500/30 transition-all duration-500 shadow-xl"
             >
               <Link href={`/projects/${project.id}`} className="absolute inset-0 z-30" />
-              <div className="aspect-16/11 overflow-hidden relative">
+              <div className="w-100 overflow-hidden relative">
                 <BlurInView delay={0.2} duration={1}>
-                  <ImageWithFallback src={project.img} alt={project.title} width={1000} height={700} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                  <ImageWithFallback src={project.img} alt={project.title} width={1000} height={700} className="w-full h-55 object-cover transition-transform duration-[2s] group-hover:scale-110" />
                 </BlurInView>
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90" />
                 <div className="absolute top-6 left-6 z-10">

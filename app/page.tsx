@@ -77,10 +77,10 @@ export default function Home() {
             <div className="relative">
               <ScaleInView className="grid grid-cols-2 gap-6">
                 <div className="aspect-square rounded-[40px] overflow-hidden shadow-2xl relative border border-slate-800">
-                  <ImageWithFallback src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789" alt="Tech" width={400} height={400} className="w-full h-full object-cover" />
+                  <ImageWithFallback src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789" alt="Tech" fill className="w-full h-full object-cover" />
                 </div>
                 <div className="aspect-square rounded-[40px] overflow-hidden shadow-2xl mt-12 relative border border-slate-800">
-                  <ImageWithFallback src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team" width={400} height={400} className="w-full h-full object-cover" />
+                  <ImageWithFallback src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team" fill className="w-full h-full object-cover" />
                 </div>
               </ScaleInView>
               <FadeInView direction="right" delay={0.6} className="absolute -bottom-10 -right-6 p-10 bg-linear-to-br from-cyan-600 to-blue-700 rounded-[40px] shadow-3xl max-w-xs border border-white/20 hidden md:block group hover:scale-105 transition-transform">
@@ -158,9 +158,9 @@ export default function Home() {
                 className="group relative rounded-[24px] overflow-hidden border border-slate-800 bg-slate-900/50 h-full hover:border-cyan-500/30 transition-all duration-500 shadow-xl flex flex-col"
               >
                 <Link href={`/projects/${project.id}`} className="absolute inset-0 z-20" />
-                <div className="aspect-16/11 overflow-hidden relative">
+                <div className="w-100 overflow-hidden relative">
                   <BlurInView delay={0.2 + i * 0.1}>
-                    <ImageWithFallback src={project.img} alt={project.title} width={600} height={400} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <ImageWithFallback src={project.img} alt={project.title} width={600} height={400} className="w-full  h-55  object-cover transition-transform duration-1000 group-hover:scale-110" />
                   </BlurInView>
                   <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90" />
                 </div>
