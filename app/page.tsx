@@ -225,7 +225,7 @@ export default function Home() {
             <div className="absolute -top-32 -left-32 w-80 h-80 bg-cyan-500/20 blur-[120px] pointer-events-none animate-pulse" />
             <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-blue-600/10 blur-[120px] pointer-events-none animate-pulse delay-1000" />
 
-            <h2 className="text-3xl md:text-4xl font-black text-white leading-[1.1] max-w-5xl uppercase tracking-tighter italic px-4 -mx-4">
+            <h2 className="leading-[1.35] text-4xl md:text-6xl font-black text-white leading-[1.1] max-w-5xl uppercase tracking-tighter px-4 -mx-4 ">
               Bắt đầu hành trình <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Kỹ thuật số bền vững</span>
             </h2>
             <p className="text-slate-400 text-lg max-w-3xl font-medium leading-relaxed">

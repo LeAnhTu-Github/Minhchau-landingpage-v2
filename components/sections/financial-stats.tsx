@@ -5,6 +5,7 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip, Cell, AreaChart, Ar
 import { TrendingUp, Users, Award, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { FadeInView, ScaleInView, StaggerContainer, BlurInView } from "@/components/ui/animations";
+import { Inter } from "next/font/google";
 
 const assetData = [
   { name: "2022", total: 3200000000 },
@@ -39,7 +40,7 @@ export default function FinancialStats() {
     setMounted(true);
   }, []);
   return (
-    <section className="py-24 bg-slate-900/30 relative overflow-hidden">
+    <section className={`py-24 bg-slate-900/30 relative overflow-hidden `}>
       <style jsx global>{`
         .recharts-bar-rectangles:focus,
         .recharts-layer:focus,
@@ -62,9 +63,9 @@ export default function FinancialStats() {
           <StaggerContainer className="flex flex-col gap-10">
             <div className="flex flex-col gap-6">
               <FadeInView direction="left">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight">
-                  Năng lực triển khai <br />
-                  <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">CÓ THỂ KIỂM CHỨNG</span>
+                <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight   leading-[1.5]">
+                  NĂNG LỰC TRIỂN KHAI <br />
+                  <span className="leading-[1.4] text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 ">CÓ THỂ KIỂM CHỨNG</span>
                 </h2>
               </FadeInView>
               <FadeInView direction="left" delay={0.2}>

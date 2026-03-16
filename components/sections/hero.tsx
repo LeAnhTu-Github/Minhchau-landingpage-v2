@@ -28,7 +28,7 @@ export default function Hero() {
             </FadeInView>
 
             <FadeInView direction="right" delay={0.2} distance={60}>
-              <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1] text-white tracking-tight">
+              <h1 className="uppercase text-4xl md:text-6xl font-extrabold leading-[1.35] text-white tracking-tight">
                 Giải pháp CNTT <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">Triển khai nhanh, vận hành bền vững</span>
               </h1>
             </FadeInView>
