@@ -7,67 +7,7 @@ import { Container } from "@/components/ui/container";
 import { JsonLd, organizationJsonLd } from "@/components/seo/JsonLd";
 import { FadeInView, ScaleInView, StaggerContainer, BlurInView } from "@/components/ui/animations";
 
-const services = [
-  {
-    icon: Code,
-    title: "Phát triển phần mềm",
-    desc: "Web/app, hệ thống nghiệp vụ, nâng cấp tối ưu hiệu năng và xử lý dữ liệu lớn.",
-    color: "from-cyan-500 to-blue-600"
-  },
-  {
-    icon: Zap,
-    title: "Tích hợp viễn thông",
-    desc: "Liên thông hệ thống, dịch vụ nền tảng nhà mạng (IP/SS7/HLR/IN).",
-    color: "from-amber-400 to-orange-600"
-  },
-  {
-    icon: ShieldCheck,
-    title: "Vận hành–bảo trì SLA",
-    desc: "Đảm bảo ổn định 24/7, bảo trì định kỳ, cải tiến vận hành chuyên nghiệp.",
-    color: "from-emerald-400 to-teal-600"
-  },
-  {
-    icon: Search,
-    title: "Kiểm thử QA",
-    desc: "Test plan/case, báo cáo chất lượng, hỗ trợ nghiệm thu và bàn giao tài liệu.",
-    color: "from-purple-500 to-indigo-600"
-  }
-];
-
-const projects = [
-  {
-    title: "VR 360",
-    client: "MobiFone IT Center",
-    value: "993.000.000 VNĐ",
-    category: "Multimedia/VR",
-    img: "https://images.unsplash.com/photo-1592477342258-c4f30d121f45",
-    slug: "vr-360"
-  },
-  {
-    title: "Tổng đài di động SCall",
-    client: "VNPT Vĩnh Phúc",
-    value: "850.000.000 VNĐ",
-    category: "Viễn thông",
-    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51",
-    slug: "scall-vnpt"
-  },
-  {
-    title: "Hệ thống phần mềm BHXH",
-    client: "ICORP",
-    value: "654.215.150 VNĐ",
-    category: "Phần mềm",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-    slug: "bhxh-icorp"
-  },
-  {
-    title: "Chuyển mạng giữ số online",
-    client: "Dự án sửa chữa",
-    value: "966.175.041 VNĐ",
-    category: "Viễn thông",
-    img: "https://images.unsplash.com/photo-1551434678-e076c223a692",
-    slug: "mnp-repair"
-  }
-];
+import { SERVICES, PROJECTS } from "@/lib/constants";
 
 const processSteps = [
   { step: "01", title: "Tiếp nhận yêu cầu", desc: "Lắng nghe và phân tích bài toán khách hàng" },
@@ -97,7 +37,7 @@ export default function Home() {
           </FadeInView>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, i) => (
+            {SERVICES.map((service, i) => (
               <FadeInView
                 key={i}
                 delay={i * 0.1}
@@ -211,13 +151,13 @@ export default function Home() {
           </div>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {projects.map((project, i) => (
+            {PROJECTS.map((project, i) => (
               <ScaleInView
                 key={i}
                 delay={i * 0.1}
                 className="group relative rounded-[40px] overflow-hidden border border-slate-800 bg-slate-900/50 h-full hover:border-cyan-500/30 transition-all duration-500 shadow-xl"
               >
-                <Link href={`/projects/${project.slug}`} className="absolute inset-0 z-20" />
+                <Link href={`/projects/${project.id}`} className="absolute inset-0 z-20" />
                 <div className="aspect-16/11 overflow-hidden relative">
                   <BlurInView delay={0.2 + i * 0.1}>
                     <ImageWithFallback src={project.img} alt={project.title} width={600} height={400} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
@@ -249,7 +189,7 @@ export default function Home() {
         <Container>
           <FadeInView className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20 gap-6">
             <h2 className="text-sm font-bold tracking-[0.4em] text-cyan-500 uppercase">Quy trình làm việc</h2>
-            <h3 className="text-4xl md:text-7xl font-extrabold text-white uppercase tracking-tight leading-tight">Triển khai rõ ràng</h3>
+            <h3 className="text-4xl md:text-7xl font-extrabold text-white uppercase tracking-tight leading-[1.2] py-2">Triển khai rõ ràng</h3>
             <p className="text-slate-400 text-xl font-medium">
               Kiểm soát tiến độ và chất lượng, giảm thiểu rủi ro tối đa cho đối tác.
             </p>

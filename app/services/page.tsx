@@ -5,71 +5,13 @@ import { Code, Link2, ShieldCheck, Microscope, ArrowRight, CheckCircle2 } from "
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 import { FadeInView, StaggerContainer, BlurInView } from "@/components/ui/animations";
+import { SERVICES } from "@/lib/constants";
 import { JsonLd, serviceJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Dịch vụ",
   description: "Cung cấp các dịch vụ phát triển phần mềm, tích hợp hệ thống viễn thông, vận hành bảo trì SLA và kiểm thử QA chuyên nghiệp.",
 };
-
-const services = [
-  {
-    id: "software",
-    title: "Phát triển phần mềm & chuyển đổi số",
-    short: "Phát triển phần mềm theo yêu cầu",
-    desc: "Chúng tôi xây mới hoặc nâng cấp hệ thống phần mềm phục vụ nghiệp vụ doanh nghiệp, ưu tiên tính ổn định, khả năng mở rộng và bảo mật. Phù hợp với các dự án cần xử lý nghiệp vụ phức tạp hoặc hệ thống tải cao.",
-    icon: Code,
-    color: "from-cyan-500 to-blue-600",
-    bullets: [
-      "Web/app, portal, dashboard vận hành",
-      "Nâng cấp/tối ưu hệ thống hiện hữu",
-      "Tích hợp API, đồng bộ dữ liệu"
-    ],
-    cta: "Nhận tư vấn giải pháp phần mềm"
-  },
-  {
-    id: "telecom",
-    title: "Tích hợp hệ thống & viễn thông",
-    short: "Tích hợp hệ thống viễn thông",
-    desc: "Minh Châu có năng lực tích hợp hệ thống viễn thông theo yêu cầu dự án, bao gồm các nền tảng và kết nối như IP/SS7/HLR/IN. Chúng tôi tập trung vào tính ổn định, liên thông dữ liệu và khả năng vận hành bền vững.",
-    icon: Link2,
-    color: "from-amber-400 to-orange-600",
-    bullets: [
-      "Liên thông hệ thống, tích hợp nền tảng",
-      "Thiết kế luồng dữ liệu & kiểm soát rủi ro",
-      "Hỗ trợ vận hành sau triển khai"
-    ],
-    cta: "Trao đổi yêu cầu tích hợp"
-  },
-  {
-    id: "sla",
-    title: "Vận hành – bảo trì – SLA",
-    short: "Vận hành theo SLA",
-    desc: "Sau khi go-live, tính ổn định quyết định hiệu quả dự án. Minh Châu cung cấp dịch vụ vận hành–bảo trì theo SLA, hỗ trợ xử lý sự cố, bảo trì định kỳ và đề xuất cải tiến vận hành.",
-    icon: ShieldCheck,
-    color: "from-emerald-400 to-teal-600",
-    bullets: [
-      "Tiếp nhận & phân loại sự cố theo mức độ",
-      "Bảo trì định kỳ, tối ưu hiệu năng",
-      "Báo cáo vận hành & khuyến nghị cải tiến"
-    ],
-    cta: "Nhận đề xuất SLA"
-  },
-  {
-    id: "qa",
-    title: "Kiểm thử & đảm bảo chất lượng",
-    short: "Kiểm thử QA",
-    desc: "Minh Châu triển khai hoạt động kiểm thử từ phân tích yêu cầu đến xây dựng test plan, test case và báo cáo chất lượng, hỗ trợ nghiệm thu và bàn giao tài liệu theo tiêu chuẩn dự án.",
-    icon: Microscope,
-    color: "from-purple-500 to-indigo-600",
-    bullets: [
-      "Test chức năng, hồi quy (tuỳ dự án)",
-      "Báo cáo lỗi & theo dõi khắc phục",
-      "Tài liệu kiểm thử phục vụ nghiệm thu"
-    ],
-    cta: "Nhận gói QA"
-  }
-];
 
 export default function ServicesPage() {
   return (
@@ -81,9 +23,9 @@ export default function ServicesPage() {
         <Container className="relative z-10">
           <StaggerContainer className="flex flex-col gap-8 max-w-4xl">
             <FadeInView direction="down">
-              <h1 className="text-4xl md:text-8xl font-black tracking-tight text-white uppercase leading-tight">
-                Dịch vụ của <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Minh Châu</span>
+              <h1 className="text-5xl md:text-9xl font-black tracking-tighter text-white uppercase leading-[1.2] py-2">
+                Dịch vụ <br />
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">Minh Châu</span>
               </h1>
             </FadeInView>
             <FadeInView delay={0.2}>
@@ -99,7 +41,7 @@ export default function ServicesPage() {
       <section className="py-24">
         <Container>
           <div className="flex flex-col gap-32">
-            {services.map((service, i) => (
+            {SERVICES.map((service, i) => (
               <FadeInView
                 key={service.id}
                 delay={0.1}

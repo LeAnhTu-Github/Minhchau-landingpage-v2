@@ -8,55 +8,14 @@ import { cn } from "@/lib/utils";
 import { ScaleInView, BlurInView, StaggerContainer, FadeInView } from "@/components/ui/animations";
 import { AnimatePresence, motion } from "framer-motion";
 
-const projects = [
-  {
-    id: "vr-360",
-    title: "VR 360",
-    client: "MobiFone IT Center",
-    category: "Multimedia/VR",
-    value: "993.000.000 VNĐ",
-    img: "https://images.unsplash.com/photo-1592477342258-c4f30d121f45",
-    desc: "Phát triển nền tảng thực tế ảo hỗ trợ trải nghiệm số cho trung tâm dữ liệu.",
-    results: "Tăng tương tác số, bàn giao đầy đủ tài liệu."
-  },
-  {
-    id: "scall-vnpt",
-    title: "Tổng đài di động SCall",
-    client: "VNPT Vĩnh Phúc",
-    category: "Viễn thông",
-    value: "850.000.000 VNĐ",
-    img: "https://images.unsplash.com/photo-1551434678-e076c223a692",
-    desc: "Nâng cấp hệ thống lõi để đáp ứng tải cao và tích hợp tính năng viễn thông mới.",
-    results: "Hệ thống ổn định, giảm 30% gián đoạn."
-  },
-  {
-    id: "bhxh-icorp",
-    title: "Phần mềm BHXH",
-    client: "ICORP",
-    category: "Phần mềm",
-    value: "654.215.150 VNĐ",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-    desc: "Tối ưu hóa quy trình xử lý dữ liệu bảo hiểm và cải thiện giao diện quản trị.",
-    results: "Tốc độ xử lý hồ sơ tăng 40%."
-  },
-  {
-    id: "mnp-repair",
-    title: "Chuyển mạng giữ số online",
-    client: "Đối tác Viễn thông",
-    category: "Viễn thông",
-    value: "966.175.041 VNĐ",
-    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51",
-    desc: "Xử lý lỗi logic trong luồng chuyển mạng online và bảo trì định kỳ.",
-    results: "Đạt chuẩn SLA 99.99% sau triển khai."
-  }
-];
+import { PROJECTS } from "@/lib/constants";
 
 const categories = ["Tất cả", "Phần mềm", "Viễn thông", "Multimedia/VR"];
 
 export function ProjectList() {
   const [activeCategory, setActiveCategory] = useState("Tất cả");
 
-  const filteredProjects = projects.filter(p =>
+   const filteredProjects = PROJECTS.filter(p =>
     activeCategory === "Tất cả" || p.category === activeCategory
   );
 

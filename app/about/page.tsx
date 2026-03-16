@@ -19,9 +19,9 @@ export default function AboutPage() {
         <Container className="relative z-10">
           <StaggerContainer className="flex flex-col gap-8 max-w-5xl">
             <FadeInView direction="down">
-              <h1 className="text-5xl md:text-9xl font-black tracking-tighter text-white uppercase leading-none">
+              <h1 className="text-5xl md:text-9xl font-black tracking-tighter text-white uppercase leading-[1.2] py-2">
                 Về <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">Minh Châu</span>
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 italic px-4 -ml-4">Minh Châu</span>
               </h1>
             </FadeInView>
             <FadeInView delay={0.2}>
@@ -175,7 +175,7 @@ export default function AboutPage() {
         <Container>
           <FadeInView className="flex flex-col items-center gap-16 text-center px-12 py-32 rounded-[60px] bg-linear-to-b from-slate-900 to-slate-950 border border-slate-800 relative overflow-hidden shadow-3xl">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-cyan-500/50 to-transparent" />
-            <h2 className="text-4xl md:text-8xl font-black text-white max-w-4xl leading-none uppercase tracking-tighter italic px-4 -ml-4">Sẵn sàng <br /> đồng hành?</h2>
+            <h2 className="text-4xl md:text-8xl font-black text-white max-w-4xl leading-[1.2] py-4 uppercase tracking-tighter italic px-4 -ml-4">Sẵn sàng <br /> đồng hành?</h2>
             <p className="text-slate-400 text-2xl max-w-2xl font-medium leading-relaxed">
               Hãy để chúng tôi lắng nghe yêu cầu của bạn và đề xuất lộ trình triển khai phù hợp nhất.
             </p>
