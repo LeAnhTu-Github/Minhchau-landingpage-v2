@@ -75,7 +75,7 @@ export default function FinancialStats() {
               </FadeInView>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-6">
               {[
                 { icon: Users, value: 56, suffix: "+", label: "Nhân sự chuyên môn", color: "text-cyan-500" },
                 { icon: Award, value: 86, suffix: "%", label: "Trình độ Đại học+", color: "text-blue-500" },

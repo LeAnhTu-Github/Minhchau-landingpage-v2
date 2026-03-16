@@ -36,7 +36,7 @@ export default function ContactPage() {
       {/* Main Contact Section */}
       <section className="py-24">
         <Container>
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             {/* Contact Info & FAQ */}
             <div className="lg:col-span-5">
               <StaggerContainer className="flex flex-col gap-12">
@@ -52,7 +52,7 @@ export default function ContactPage() {
                       { icon: MessageSquare, title: "Thời gian làm việc", text: "Thứ 2 - Thứ 6: 08:30 - 18:00 (SLA 24/7)" }
                     ].map((item, i) => (
                       <FadeInView key={i} direction="left" delay={0.1 + i * 0.1}>
-                        <div className="flex gap-6 p-8 rounded-[35px] bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-xl">
+                        <div className="flex gap-6 p-6 rounded-[35px] bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-xl">
                           <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/20 transition-all group-hover:scale-110">
                             <item.icon className="w-8 h-8 text-cyan-400" />
                           </div>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <ScaleInView delay={0.6} className="flex flex-col gap-8 p-12 bg-linear-to-br from-cyan-600 to-blue-700 rounded-[50px] text-white shadow-3xl relative overflow-hidden group">
+                <ScaleInView delay={0.6} className="flex flex-col gap-8 p-6 md:p-12 bg-linear-to-br from-cyan-600 to-blue-700 rounded-[50px] text-white shadow-3xl relative overflow-hidden group">
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                   <h3 className="text-3xl font-black uppercase tracking-tighter italic relative z-10 text-white">Cam kết dịch vụ</h3>
                   <ul className="space-y-6 relative z-10">
@@ -114,7 +114,7 @@ export default function ContactPage() {
               { q: "Minh Châu có làm dự án nhỏ không?", a: "Chúng tôi ưu tiên hiệu quả thực tế cho đối tác, không phân biệt quy mô." },
               { q: "Có xuất hóa đơn đỏ không?", a: "Có. Minh Châu thực hiện đầy đủ nghĩa vụ thuế và xuất hóa đơn GTGT." }
             ].map((faq, i) => (
-              <FadeInView key={i} delay={i * 0.1} className="p-10 rounded-[40px] bg-slate-950 border border-slate-800 flex flex-col gap-6 group hover:border-cyan-500/30 transition-all duration-500 shadow-xl">
+              <FadeInView key={i} delay={i * 0.1} className="p-6 md:p-10 rounded-[40px] bg-slate-950 border border-slate-800 flex flex-col gap-6 group hover:border-cyan-500/30 transition-all duration-500 shadow-xl">
                 <h4 className="text-white font-black text-xl leading-tight uppercase tracking-tight group-hover:text-cyan-400 transition-colors italic">{faq.q}</h4>
                 <p className="text-slate-400 text-lg leading-relaxed font-medium">{faq.a}</p>
               </FadeInView>

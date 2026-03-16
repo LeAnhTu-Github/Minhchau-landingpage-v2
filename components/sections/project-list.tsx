@@ -23,11 +23,11 @@ export function ProjectList() {
     <div className="flex flex-col gap-16">
       {/* Filter UI */}
       <FadeInView direction="up">
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-5 pb-10 border-b border-slate-800">
+        <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-5 pb-10 border-b border-slate-800">
           <div className="flex items-center gap-3 mr-6 text-slate-500 text-[10px] font-black uppercase tracking-[0.4em] shrink-0">
             <Filter className="w-5 h-5" /> Lọc dự án
           </div>
-          <div className="flex flex-col lg:flex-row gap-4">
+          <div className="flex flex-col lg:flex-row  gap-4">
             {categories.map((cat) => (
               <button
                 key={cat}
