@@ -111,7 +111,7 @@ export default function ServicesPage() {
       {/* Final CTA */}
       <section className="py-24 bg-slate-950">
         <Container>
-          <FadeInView className="bg-linear-to-br from-slate-900 to-slate-950 p-16 md:p-32 rounded-[60px] border border-slate-800 flex flex-col items-center text-center gap-12 shadow-3xl relative overflow-hidden">
+          <FadeInView className="bg-linear-to-br from-slate-900 to-slate-950 p-8 lg:p-16 xl:p-32 rounded-[60px] border border-slate-800 flex flex-col items-center text-center gap-12 shadow-3xl relative overflow-hidden">
             <div className="absolute -top-32 -right-32 w-96 h-96 bg-cyan-500/10 blur-[150px] pointer-events-none" />
             <div className="flex flex-col gap-8 max-w-4xl relative z-10">
               <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-white leading-tight uppercase italic px-4 -mx-4">Chưa chắc chọn dịch vụ nào?</h2>
@@ -119,7 +119,7 @@ export default function ServicesPage() {
                 Gửi mô tả yêu cầu, Minh Châu sẽ tư vấn mô hình phù hợp và đề xuất lộ trình triển khai theo mục tiêu thực tế.
               </p>
             </div>
-            <Link href="/contact" className="px-20 py-8 bg-white text-slate-950 font-black rounded-3xl shadow-3xl hover:bg-cyan-500 hover:text-white transition-all text-2xl uppercase tracking-[0.3em] relative z-10 hover:scale-110 active:scale-95">
+            <Link href="/contact" className="px-10 lg:px-20 py-8 bg-white text-slate-950 font-black rounded-3xl shadow-3xl hover:bg-cyan-500 hover:text-white transition-all text-2xl uppercase tracking-[0.3em] relative z-10 hover:scale-110 active:scale-95">
               Tư vấn ngay
             </Link>
           </FadeInView>

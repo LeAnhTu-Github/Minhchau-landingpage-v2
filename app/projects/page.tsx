@@ -42,7 +42,7 @@ export default function ProjectsPage() {
       {/* Concept CTA Section */}
       <section className="py-24 bg-slate-950">
         <Container>
-          <FadeInView className="bg-linear-to-br from-cyan-600 to-blue-700 p-16 md:p-32 rounded-[60px] shadow-3xl relative overflow-hidden group flex flex-col lg:flex-row items-center justify-between gap-16">
+          <FadeInView className="bg-linear-to-br from-cyan-600 to-blue-700 p-8 lg:p-16 xl:p-32 rounded-[60px] shadow-3xl relative overflow-hidden group flex flex-col lg:flex-row items-center justify-between gap-16">
             <div className="absolute -right-32 -top-32 w-96 h-96 bg-white/10 rounded-full blur-[120px] group-hover:scale-150 transition-transform duration-1000" />
             <div className="flex flex-col gap-8 max-w-3xl text-center lg:text-left relative z-10">
               <h2 className="text-3xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter italic px-4 -mx-4">Cần một giải pháp tương tự?</h2>
@@ -50,7 +50,7 @@ export default function ProjectsPage() {
                 Chúng tôi cam kết chất lượng triển khai và bàn giao đầy đủ tài liệu, hỗ trợ vận hành 24/7 theo cam kết SLA.
               </p>
             </div>
-            <Link href="/contact" className="px-16 py-8 bg-white text-slate-950 font-black rounded-3xl shadow-3xl hover:bg-slate-950 hover:text-white transition-all text-xl uppercase tracking-[0.3em] relative z-10 shrink-0 hover:scale-110 active:scale-95">
+            <Link href="/contact" className="px-6 lg:px-16 py-8 lg:py-8 bg-white text-slate-950 font-black rounded-3xl shadow-3xl hover:bg-slate-950 hover:text-white transition-all text-xl uppercase tracking-[0.3em] relative z-10 shrink-0 hover:scale-110 active:scale-95">
               Liên hệ ngay
             </Link>
           </FadeInView>
