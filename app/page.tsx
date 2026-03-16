@@ -226,7 +226,7 @@ export default function Home() {
             <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-blue-600/10 blur-[120px] pointer-events-none animate-pulse delay-1000" />
 
             <h2 className="leading-[1.35] text-4xl md:text-6xl font-black text-white leading-[1.1] max-w-5xl uppercase tracking-tighter px-4 -mx-4 ">
-              Bắt đầu hành trình <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Kỹ thuật số bền vững</span>
+              Bắt đầu hành trình <span className="inline-block py-2 -my-2 text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Kỹ thuật số bền vững</span>
             </h2>
             <p className="text-slate-400 text-lg max-w-3xl font-medium leading-relaxed">
               Minh Châu sẵn sàng đồng hành cùng bạn từ ý tưởng đến vận hành thực tế. Hãy để chúng tôi làm rõ nhu cầu và đề xuất phương án tối ưu nhất.

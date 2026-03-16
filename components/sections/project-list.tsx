@@ -56,7 +56,7 @@ export function ProjectList() {
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              transition={{ duration: 0.1, delay: i * 0, ease: [0.21, 0.21, 0.21, 0.21] }}
               className="group relative flex flex-col rounded-[24px] overflow-hidden border border-slate-800 bg-slate-900/50 h-full hover:border-cyan-500/30 transition-all duration-500 shadow-xl"
             >
               <Link href={`/projects/${project.id}`} className="absolute inset-0 z-30" />

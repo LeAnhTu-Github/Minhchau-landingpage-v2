@@ -65,7 +65,7 @@ export default function FinancialStats() {
               <FadeInView direction="left">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight   leading-[1.5]">
                   NĂNG LỰC TRIỂN KHAI <br />
-                  <span className="leading-[1.4] text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 ">CÓ THỂ KIỂM CHỨNG</span>
+                  <span className="inline-block py-2 -my-2 leading-[1.4] text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 ">CÓ THỂ KIỂM CHỨNG</span>
                 </h2>
               </FadeInView>
               <FadeInView direction="left" delay={0.2}>

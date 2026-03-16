@@ -20,7 +20,7 @@ export default function ProjectsPage() {
           <StaggerContainer className="flex flex-col gap-8 max-w-4xl">
             <FadeInView direction="down">
               <h1 className="text-3xl md:text-6xl font-black tracking-tight text-white uppercase leading-tight">
-                Dự án <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Tiêu Biểu</span>
+                Dự án <span className="inline-block py-2 -my-2  text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Tiêu Biểu</span>
               </h1>
             </FadeInView>
             <FadeInView delay={0.2}>

@@ -20,7 +20,7 @@ export default function ContactPage() {
           <StaggerContainer className="flex flex-col items-center text-center gap-10">
             <FadeInView direction="down">
               <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.2] uppercase py-2">
-                Liên hệ <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 italic px-4 -mx-4">Minh Châu</span>
+                Liên hệ <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 px-4 -mx-4">Minh Châu</span>
               </h1>
             </FadeInView>
             <FadeInView delay={0.2}>

@@ -20,7 +20,7 @@ export default function AboutPage() {
           <StaggerContainer className="flex flex-col gap-8 max-w-5xl">
             <FadeInView direction="down">
               <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase leading-[1.2] py-2">
-                Về <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 italic px-4 -mx-4">Minh Châu</span>
+                Về <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300  px-4 -mx-4">Minh Châu</span>
               </h1>
             </FadeInView>
             <FadeInView delay={0.2}>
@@ -91,8 +91,8 @@ export default function AboutPage() {
         <Container>
           <div className="flex flex-col gap-20">
             <FadeInView className="max-w-5xl flex flex-col gap-10">
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-white leading-tight uppercase py-2">
-                Đội ngũ là <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Nền tảng</span>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-tight uppercase py-2">
+                Đội ngũ là <span className="inline-block py-2 -my-2  text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Nền tảng</span>
               </h2>
               <p className="text-xl text-slate-400 leading-relaxed font-medium">
                 Minh Châu có quy mô <span className="text-white font-black">56 nhân sự</span>, tỷ lệ trình độ Đại học trở lên đạt <span className="text-white font-black">86%</span>.
@@ -105,7 +105,7 @@ export default function AboutPage() {
               <div className="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-20">
                 <div className="flex-1">
                   <BlurInView delay={0.4}>
-                    <p className="text-2xl md:text-4xl font-black text-white leading-tight italic opacity-90 tracking-tighter">
+                    <p className="text-2xl md:text-4xl font-black text-white leading-tight italic opacity-90 tracking-normal">
                       "Chúng tôi triển khai theo đúng vai trò, đảm bảo tiến độ và chất lượng bàn giao tuyệt đối."
                     </p>
                   </BlurInView>
@@ -134,7 +134,7 @@ export default function AboutPage() {
             <div className="absolute top-0 right-0 w-1/3 h-full bg-cyan-500/5 blur-[150px] pointer-events-none" />
 
             <div className="max-w-4xl flex flex-col gap-8 relative z-10">
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-white leading-tight uppercase py-2">
+              <h2 className="text-3xl md:text-4xl font-black tracking-normal text-white leading-tight uppercase py-2">
                 Minh bạch năng lực
               </h2>
               <p className="text-xl text-slate-400 font-medium leading-relaxed">
@@ -173,7 +173,7 @@ export default function AboutPage() {
         <Container>
           <FadeInView className="flex flex-col items-center gap-16 text-center px-12 py-32 rounded-[60px] bg-linear-to-b from-slate-900 to-slate-950 border border-slate-800 relative overflow-hidden shadow-3xl">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-cyan-500/50 to-transparent" />
-            <h2 className="text-3xl md:text-4xl font-black text-white max-w-4xl leading-[1.1] py-4 uppercase tracking-tighter italic px-4 -mx-4">Sẵn sàng đồng hành?</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white max-w-4xl leading-[1.1] py-4 uppercase tracking-normal italic px-4 -mx-4">Sẵn sàng đồng hành?</h2>
             <p className="text-slate-400 text-xl max-w-2xl font-medium leading-relaxed">
               Hãy để chúng tôi lắng nghe yêu cầu của bạn và đề xuất lộ trình triển khai phù hợp nhất.
             </p>
