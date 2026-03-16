@@ -36,7 +36,7 @@ export default function Home() {
             </p>
           </FadeInView>
 
-          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {SERVICES.map((service, i) => (
               <FadeInView
                 key={i}
@@ -150,7 +150,7 @@ export default function Home() {
             </FadeInView>
           </div>
 
-          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {PROJECTS.map((project, i) => (
               <ScaleInView
                 key={i}
@@ -194,7 +194,7 @@ export default function Home() {
             </p>
           </FadeInView>
 
-          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {processSteps.map((p, i) => (
               <FadeInView key={i} delay={i * 0.1} className="relative p-8 rounded-[30px] bg-slate-900 border border-slate-800 flex flex-col gap-4 group hover:border-cyan-500/20 transition-all duration-500 shadow-xl overflow-hidden">
                 <div className="absolute inset-0 bg-linear-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

@@ -60,8 +60,8 @@ export default function FinancialStats() {
       <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 blur-[100px] pointer-events-none" />
       <Container>
         <div className=" gap-16 items-center">
-          <StaggerContainer className="flex gap-50">
-            <div className="flex flex-col gap-6 pt-16">
+          <StaggerContainer className="flex flex-col lg:flex-row gap-10 md:gap-50">
+            <div className="flex flex-col gap-6 pt-15">
               <FadeInView direction="left">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight   leading-[1.5]">
                   NĂNG LỰC TRIỂN KHAI <br />

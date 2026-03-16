@@ -27,7 +27,7 @@ export function ProjectList() {
           <div className="flex items-center gap-3 mr-6 text-slate-500 text-[10px] font-black uppercase tracking-[0.4em] shrink-0">
             <Filter className="w-5 h-5" /> Lọc dự án
           </div>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col lg:flex-row gap-4">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -47,7 +47,7 @@ export function ProjectList() {
       </FadeInView>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, i) => (
             <motion.div

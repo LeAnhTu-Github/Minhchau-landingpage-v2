@@ -65,7 +65,7 @@ export default function AboutPage() {
               </FadeInView>
             </StaggerContainer>
 
-            <StaggerContainer className="grid grid-cols-2 lg:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-2xl mx-auto">
               {[
                 { icon: Target, title: "Chuyên nghiệp", desc: "Quy trình bài bản, tài liệu rõ ràng, cam kết tiến độ." },
                 { icon: Award, title: "Uy tín", desc: "Năng lực thật, con số thật, kết quả đo lường được." },
