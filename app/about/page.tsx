@@ -130,7 +130,7 @@ export default function AboutPage() {
       {/* Financial Transparency */}
       <section className="py-24">
         <Container>
-          <FadeInView className="bg-linear-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-[60px] p-16 md:p-32 relative overflow-hidden flex flex-col gap-20 shadow-3xl">
+          <FadeInView className="bg-linear-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-[60px] p-8 md:p-16 lg:p-32 relative overflow-hidden flex flex-col gap-20 shadow-3xl">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-cyan-500/5 blur-[150px] pointer-events-none" />
 
             <div className="max-w-4xl flex flex-col gap-8 relative z-10">
@@ -148,9 +148,9 @@ export default function AboutPage() {
                 { label: "Lợi nhuận sau thuế", value: "Lành mạnh", desc: "Vận hành hiệu quả" },
                 { label: "Doanh thu", value: "Tăng trưởng", desc: "Chu kỳ 2022-2024" }
               ].map((item, i) => (
-                <FadeInView key={i} delay={0.4 + i * 0.1} className="bg-slate-950/50 border border-slate-800 p-12 rounded-[45px] flex flex-col gap-6 hover:border-cyan-500/40 transition-all group duration-500">
+                <FadeInView key={i} delay={0.4 + i * 0.1} className="bg-slate-950/50 border border-slate-800 p-6 lg:p-12 rounded-[45px] flex flex-col gap-6 hover:border-cyan-500/40 transition-all group duration-500">
                   <span className="text-xs font-black uppercase tracking-[0.4em] text-slate-500 group-hover:text-cyan-500 transition-colors">{item.label}</span>
-                  <span className="text-4xl font-black text-white tracking-tight">{item.value}</span>
+                  <span className="text-4xl font-black text-white tracking-tight text-center md:text-left">{item.value}</span>
                   <div className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
                     <span className="text-sm text-slate-500 font-black uppercase tracking-widest">{item.desc}</span>
@@ -171,13 +171,13 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-24 bg-slate-950">
         <Container>
-          <FadeInView className="flex flex-col items-center gap-16 text-center px-12 py-32 rounded-[60px] bg-linear-to-b from-slate-900 to-slate-950 border border-slate-800 relative overflow-hidden shadow-3xl">
+          <FadeInView className="flex flex-col items-center gap-16 text-center px-6 lg:px-12 py-16 lg:py-32 rounded-[60px] bg-linear-to-b from-slate-900 to-slate-950 border border-slate-800 relative overflow-hidden shadow-3xl">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-cyan-500/50 to-transparent" />
             <h2 className="text-3xl md:text-4xl font-black text-white max-w-4xl leading-[1.1] py-4 uppercase tracking-normal italic px-4 -mx-4">Sẵn sàng đồng hành?</h2>
             <p className="text-slate-400 text-xl max-w-2xl font-medium leading-relaxed">
               Hãy để chúng tôi lắng nghe yêu cầu của bạn và đề xuất lộ trình triển khai phù hợp nhất.
             </p>
-            <Link href="/contact" className="px-20 py-8 bg-cyan-600 hover:bg-cyan-500 text-white font-black rounded-[30px] transition-all shadow-3xl shadow-cyan-900/50 text-2xl uppercase tracking-[0.3em] hover:scale-110 active:scale-95">
+            <Link href="/contact" className="px-10 lg:px-20 py-8 lg:py-8 bg-cyan-600 hover:bg-cyan-500 text-white font-black rounded-[30px] transition-all shadow-3xl shadow-cyan-900/50 text-2xl uppercase tracking-[0.3em] hover:scale-110 active:scale-95">
               Trao đổi ngay
             </Link>
           </FadeInView>
