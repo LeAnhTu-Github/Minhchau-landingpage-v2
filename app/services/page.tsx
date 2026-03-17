@@ -37,76 +37,87 @@ export default function ServicesPage() {
       </section>
 
       {/* Main Services List */}
-      <section className="py-24">
-        <Container>
-          <div className="flex flex-col gap-32">
-            {SERVICES.map((service, i) => (
-              <FadeInView
-                key={service.id}
-                delay={0.1}
+      <section className=" py-24 overflow-hidden">
+  <Container>
+    <div className="flex flex-col gap-20 md:gap-32">
+      {SERVICES.map((service, i) => (
+        <div
+          key={service.id}
+          className={cn(
+            "flex flex-col lg:flex-row gap-10 md:gap-20 items-center",
+            i % 2 === 1 ? "lg:flex-row-reverse" : ""
+          )}
+        >
+          {/* LEFT CONTENT */}
+          <div className="flex-1 flex flex-col gap-8 md:gap-10">
+            {/* Header */}
+            <div className="flex flex-col gap-6 md:gap-8">
+              <div
                 className={cn(
-                  "flex flex-col lg:flex-row gap-20 items-center",
-                  i % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  "w-20 h-20 md:w-24 md:h-24 rounded-3xl bg-linear-to-br p-0.5 shadow-2xl",
+                  service.color
                 )}
               >
-                <StaggerContainer className="flex-1 flex flex-col gap-10">
-                  <div className="flex flex-col gap-8">
-                    <FadeInView direction="up">
-                      <div className={cn("w-24 h-24 rounded-3xl bg-linear-to-br p-0.5 shadow-2xl", service.color)}>
-                        <div className="w-full h-full bg-slate-950 rounded-[22px] flex items-center justify-center">
-                          <service.icon className="w-12 h-12 text-white" />
-                        </div>
-                      </div>
-                    </FadeInView>
-                    <FadeInView direction="up" delay={0.1}>
-                      <h2 className="text-3xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter italic px-4 -ml-4">{service.title}</h2>
-                    </FadeInView>
-                    <FadeInView direction="up" delay={0.2}>
-                      <p className="text-lg text-slate-400 leading-relaxed font-medium">
-                        {service.desc}
-                      </p>
-                    </FadeInView>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {service.bullets.map((bullet, idx) => (
-                      <FadeInView key={idx} delay={0.3 + idx * 0.1} direction="left">
-                        <div className="flex gap-5 p-6 rounded-[28px] bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-xl hover:bg-slate-800/40">
-                          <CheckCircle2 className="w-6 h-6 text-cyan-500 shrink-0 group-hover:scale-125 transition-transform" />
-                          <span className="text-slate-200 font-black text-sm uppercase tracking-wider leading-tight">{bullet}</span>
-                        </div>
-                      </FadeInView>
-                    ))}
-                  </div>
-
-                  <FadeInView delay={0.6}>
-                    <Link href="/contact" className="w-fit px-12 py-6 bg-cyan-600 hover:bg-cyan-500 text-white font-black rounded-2xl shadow-3xl shadow-cyan-900/40 transition-all flex items-center gap-4 uppercase tracking-[0.2em] text-sm hover:scale-105 active:scale-95">
-                      {service.cta} <ArrowRight className="w-6 h-6" />
-                    </Link>
-                  </FadeInView>
-                </StaggerContainer>
-
-                <div className="flex-1 w-full aspect-square bg-slate-950 rounded-[80px] overflow-hidden border border-slate-800 relative group shadow-3xl">
-                  <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      <div className={cn("absolute inset-0 blur-[100px] opacity-30", service.color.replace('from-', 'bg-'))} />
-                      <BlurInView delay={0.4}>
-                        <service.icon className="w-64 h-64 text-slate-900 transition-all duration-1000 group-hover:text-cyan-500/10 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
-                      </BlurInView>
-                    </div>
-                  </div>
-                  {/* Decorative elements */}
-                  <div className="absolute top-16 left-16 w-32 h-px bg-linear-to-r from-cyan-500/50 to-transparent" />
-                  <div className="absolute top-16 left-16 h-32 w-px bg-linear-to-b from-cyan-500/50 to-transparent" />
-                  <div className="absolute bottom-16 right-16 w-32 h-px bg-linear-to-l from-cyan-500/50 to-transparent" />
-                  <div className="absolute bottom-16 right-16 h-32 w-px bg-linear-to-t from-cyan-500/50 to-transparent" />
+                <div className="w-full h-full bg-slate-950 rounded-[22px] flex items-center justify-center">
+                  <service.icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
                 </div>
-              </FadeInView>
-            ))}
+              </div>
+
+              {/* ❌ bỏ -ml-4 */}
+              <h2 className="text-2xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter italic px-2 md:px-4 break-words">
+                {service.title}
+              </h2>
+
+              <p className="text-base md:text-lg text-slate-400 leading-relaxed font-medium">
+                {service.desc}
+              </p>
+            </div>
+
+            {/* Bullets */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {service.bullets.map((bullet, idx) => (
+                <div
+                  key={idx}
+                  className="flex gap-4 md:gap-5 p-5 md:p-6 rounded-[20px] md:rounded-[28px] bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-xl hover:bg-slate-800/40"
+                >
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-cyan-500 shrink-0" />
+                  <span className="text-slate-200 font-bold text-xs md:text-sm uppercase tracking-wider leading-tight">
+                    {bullet}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <Link
+              href="/contact"
+              className="w-fit px-8 md:px-12 py-4 md:py-6 bg-cyan-600 hover:bg-cyan-500 text-white font-black rounded-2xl shadow-lg transition-all flex items-center gap-3 md:gap-4 uppercase tracking-widest text-xs md:text-sm"
+            >
+              {service.cta}
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+            </Link>
           </div>
-        </Container>
-      </section>
+
+          {/* RIGHT IMAGE */}
+          <div className="flex-1 w-full aspect-square bg-slate-950 rounded-[40px] md:rounded-[80px] overflow-hidden border border-slate-800 relative shadow-xl">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative">
+                <div
+                  className={cn(
+                    "absolute inset-0 blur-[80px] md:blur-[100px] opacity-30",
+                    service.color.replace("from-", "bg-")
+                  )}
+                />
+                {/* ❌ giảm size icon mobile */}
+                <service.icon className="w-40 h-40 md:w-64 md:h-64 text-slate-900 relative z-10" />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
 
       {/* Final CTA */}
       <section className="py-24 bg-slate-950">

@@ -14,17 +14,16 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <section className="pt-24 pb-24 md:pt-32 md:pb-40 bg-slate-950 relative overflow-hidden">
-        <div className="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 bg-cyan-500/10 blur-[100px] pointer-events-none" />
+      <section className=" bg-slate-950 pt-24 pb-24 md:pt-32 md:pb-40 relative overflow-hidden">  
+        <div className="absolute top-0 right-0 w-72 h-72 md:w-96 md:h-96 bg-cyan-500/10 blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
         <Container className="relative z-10">
           <StaggerContainer className="flex flex-col items-center text-center gap-10">
             <FadeInView direction="down">
-              <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.2] uppercase py-2">
-                Liên hệ <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 px-4 -mx-4">Minh Châu</span>
-              </h1>
+             <h1 className="text-3xl md:text-6xl font-black text-white tracking-tighter leading-[1.2] uppercase py-2"> Liên hệ 
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300 px-4 -mx-4"> Minh Châu</span> </h1>
             </FadeInView>
             <FadeInView delay={0.2}>
-              <p className="text-lg md:text-2xl text-slate-400 leading-relaxed max-w-4xl mx-auto font-medium">
+              <p className="text-sm md:text-2xl text-slate-400 leading-relaxed max-w-4xl mx-auto font-medium">
                 Hãy cho chúng tôi biết mục tiêu dự án của bạn. <br className="hidden md:block" />
                 Minh Châu sẽ phản hồi phương án tối ưu trong vòng 8 giờ làm việc.
               </p>
@@ -44,26 +43,32 @@ export default function ContactPage() {
                   <FadeInView direction="left">
                     <h2 className="text-4xl font-black text-white tracking-tight uppercase italic">Kết nối ngay</h2>
                   </FadeInView>
-                  <div className="flex flex-col gap-6">
-                    {[
-                      { icon: MapPin, title: "Văn phòng chính", text: "Tòa nhà công nghệ cao, Hà Nội, Việt Nam" },
-                      { icon: Phone, title: "Điện thoại hỗ trợ", text: "+84 123 456 789 (Zalo/Viber)" },
-                      { icon: Mail, title: "Email báo giá", text: "contact@minhchauservices.com" },
-                      { icon: MessageSquare, title: "Thời gian làm việc", text: "Thứ 2 - Thứ 6: 08:30 - 18:00 (SLA 24/7)" }
-                    ].map((item, i) => (
-                      <FadeInView key={i} direction="left" delay={0.1 + i * 0.1}>
-                        <div className="flex gap-6 p-6 rounded-[35px] bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-xl">
-                          <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/20 transition-all group-hover:scale-110">
-                            <item.icon className="w-8 h-8 text-cyan-400" />
-                          </div>
-                          <div>
-                            <h4 className="text-lg font-black text-white mb-2 uppercase tracking-tight">{item.title}</h4>
-                            <p className="text-slate-400 font-medium">{item.text}</p>
-                          </div>
-                        </div>
-                      </FadeInView>
-                    ))}
-                  </div>
+                 <div className="flex flex-col gap-6">
+  {[
+    { icon: MapPin, title: "Văn phòng chính", text: "Tòa nhà công nghệ cao, Hà Nội, Việt Nam" },
+    { icon: Phone, title: "Điện thoại hỗ trợ", text: "+84 123 456 789 (Zalo/Viber)" },
+    { icon: Mail, title: "Email báo giá", text: "contact@minhchauservices.com" },
+    { icon: MessageSquare, title: "Thời gian làm việc", text: "Thứ 2 - Thứ 6: 08:30 - 18:00 (SLA 24/7)" }
+  ].map((item, i) => (
+    <div
+      key={i}
+      className="flex gap-6 p-6 rounded-[35px] bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-xl"
+    >
+      <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/20 transition-all group-hover:scale-110">
+        <item.icon className="w-8 h-8 text-cyan-400" />
+      </div>
+
+      <div>
+        <h4 className="text-lg font-black text-white mb-2 uppercase tracking-tight">
+          {item.title}
+        </h4>
+        <p className="text-slate-400 font-medium">
+          {item.text}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
                 </div>
 
                 <ScaleInView delay={0.6} className="flex flex-col gap-8 p-6 md:p-12 bg-linear-to-br from-cyan-600 to-blue-700 rounded-[50px] text-white shadow-3xl relative overflow-hidden group">

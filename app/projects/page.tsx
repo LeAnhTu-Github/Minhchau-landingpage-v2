@@ -14,10 +14,10 @@ export default function ProjectsPage() {
   return (
     <div className="flex flex-col">
       {/* Header Section */}
-      <section className="pt-24 pb-16 bg-slate-950 relative overflow-hidden">
+      <section className="pt-24 pb-16 bg-green-400 relative overflow-hidden">
         <div className="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 bg-cyan-500/10 blur-[100px] pointer-events-none" />
         <Container className="relative z-10">
-          <StaggerContainer className="flex flex-col gap-8 max-w-4xl">
+          <StaggerContainer className="flex flex-col  gap-8 max-w-4xl">
             <FadeInView direction="down">
               <h1 className="text-3xl md:text-6xl font-black tracking-tight text-white uppercase leading-tight">
                 Dự án <span className="inline-block py-2 -my-2  text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500">Tiêu Biểu</span>
