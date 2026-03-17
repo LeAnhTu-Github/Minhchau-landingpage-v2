@@ -218,7 +218,7 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-24">
         <Container>
-          <FadeInView className="bg-linear-to-br from-slate-900/80 to-slate-950 border border-slate-800 rounded-[50px] p-16 md:p-32 relative overflow-hidden text-center flex flex-col items-center gap-12 shadow-3xl">
+          <FadeInView className="bg-linear-to-br from-slate-900/80 to-slate-950 border border-slate-800 rounded-[50px] p-8 md:p-16 lg:p-32 relative overflow-hidden text-center flex flex-col items-center gap-12 shadow-3xl">
             <div className="absolute -top-32 -left-32 w-80 h-80 bg-cyan-500/20 blur-[120px] pointer-events-none animate-pulse" />
             <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-blue-600/10 blur-[120px] pointer-events-none animate-pulse delay-1000" />
 
