@@ -86,7 +86,7 @@ export default function FinancialStats() {
                   key={i}
                   direction="up"
                   delay={0.3 + i * 0.1}
-                  className="p-10 w-70 rounded-[32px] bg-slate-950 border border-slate-800 flex flex-col gap-3 group hover:border-cyan-500/30 transition-all duration-500"
+                  className="p-3 md:p-10 w-fullmd:w-70 rounded-[32px] bg-slate-950 border border-slate-800 flex flex-col gap-3 group hover:border-cyan-500/30 transition-all duration-500"
                 >
                   <item.icon className={`w-10 h-10 ${item.color} mb-2 group-hover:scale-110 transition-transform`} />
                   <p className="text-3xl font-black text-white flex items-center">
@@ -96,7 +96,7 @@ export default function FinancialStats() {
                     ) : null}
                     {item.suffix && <span>{item.suffix}</span>}
                   </p>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">{item.label}</p>
+                  <p className="text-[15px] md:text-xs text-slate-400 font-bold uppercase tracking-widest">{item.label}</p>
                 </FadeInView>
               ))}
             </div>
