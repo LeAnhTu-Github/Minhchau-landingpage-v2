@@ -85,7 +85,7 @@ export function ContactForm() {
             required
             type="text"
             className="px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:outline-none focus:border-cyan-500 transition-all"
-            placeholder="Nguyễn Văn A"
+            
           />
         </div>
 
@@ -97,7 +97,7 @@ export function ContactForm() {
             onChange={handleChange}
             type="text"
             className="px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:outline-none focus:border-cyan-500 transition-all"
-            placeholder="Minh Chau Services"
+            
           />
         </div>
 
@@ -110,7 +110,7 @@ export function ContactForm() {
             required
             type="tel"
             className="px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:outline-none focus:border-cyan-500 transition-all"
-            placeholder="0912 345 678"
+            
           />
         </div>
 
@@ -122,7 +122,7 @@ export function ContactForm() {
             onChange={handleChange}
             type="email"
             className="px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:outline-none focus:border-cyan-500 transition-all"
-            placeholder="example@gmail.com"
+           
           />
         </div>
 
@@ -152,7 +152,7 @@ export function ContactForm() {
             onChange={handleChange}
             rows={4}
             className="px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:outline-none focus:border-cyan-500 transition-all resize-none"
-            placeholder="Mô tả ngắn gọn nhu cầu của bạn..."
+            
           />
         </div>
 
@@ -164,7 +164,7 @@ export function ContactForm() {
             onChange={handleChange}
             type="text"
             className="px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:outline-none focus:border-cyan-500 transition-all"
-            placeholder="Ví dụ: 500tr - 1 tỷ VNĐ"
+            
           />
         </div>
 

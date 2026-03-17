@@ -69,15 +69,15 @@ export const Footer = () => {
             <ul className="flex flex-col gap-4 text-sm">
               <li className="flex gap-3 items-start">
                 <MapPin className="w-5 h-5 text-cyan-400 shrink-0" />
-                <span>Trụ sở chính tại Việt Nam</span>
+                <span>Số 119 Ngõ 168 Kim Giang, Phường Đại Kim, Quận Hoàng Mai, Thành phố Hà Nội, Việt Nam</span>
               </li>
               <li className="flex gap-3 items-center">
                 <Phone className="w-5 h-5 text-cyan-400 shrink-0" />
-                <span>Liên hệ hỗ trợ 24/7</span>
+                <span>0243.200.3138</span>
               </li>
               <li className="flex gap-3 items-center">
                 <Mail className="w-5 h-5 text-cyan-400 shrink-0" />
-                <span>contact@minhchauservices.com</span>
+                <span>contact@minhchaucl.vn</span>
               </li>
             </ul>
           </div>

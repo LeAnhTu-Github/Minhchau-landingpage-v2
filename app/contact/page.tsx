@@ -71,17 +71,17 @@ export default function ContactPage() {
                       {
                         icon: MapPin,
                         title: "Văn phòng chính",
-                        text: "Tòa nhà công nghệ cao, Hà Nội, Việt Nam",
+                        text: "Số 119 Ngõ 168 Kim Giang, Phường Đại Kim, Quận Hoàng Mai, Thành phố Hà Nội, Việt Nam",
                       },
                       {
                         icon: Phone,
                         title: "Điện thoại hỗ trợ",
-                        text: "+84 123 456 789 (Zalo/Viber)",
+                        text: "0243.200.3138",
                       },
                       {
                         icon: Mail,
                         title: "Email báo giá",
-                        text: "contact@minhchauservices.com",
+                        text: " contact@minhchaucl.vn",
                       },
                       {
                         icon: MessageSquare,
