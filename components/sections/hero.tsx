@@ -15,8 +15,8 @@ export default function Hero() {
 
       <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <StaggerContainer className="flex flex-col gap-6">
-            <FadeInView direction="right" delay={0.1}>
+          <FadeInView direction="right" delay={0.2} distance={80}>
+            <StaggerContainer className="flex flex-col gap-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-sm font-medium w-fit">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -24,51 +24,47 @@ export default function Hero() {
                 </span>
                 Giải pháp CNTT & Viễn thông hàng đầu
               </div>
-            </FadeInView>
 
-            <FadeInView direction="right" delay={0.2} distance={60}>
               <h1 className="uppercase text-4xl md:text-6xl font-extrabold leading-[1.35] text-white tracking-tight">
                 Giải pháp CNTT <span className="inline-block py-2 -my-2 text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 via-cyan-300">Triển khai nhanh, vận hành bền vững</span>
               </h1>
-            </FadeInView>
 
-            <FadeInView direction="right" delay={0.4} distance={40}>
               <p className="text-base text-slate-400 leading-relaxed max-w-xl">
                 Minh Châu cung cấp dịch vụ phát triển phần mềm, tích hợp hệ thống, vận hành–bảo trì theo SLA và kiểm thử QA. Chúng tôi tập trung vào hiệu quả triển khai thực tế: hệ thống chạy ổn định, quy trình nghiệm thu rõ ràng.
               </p>
-            </FadeInView>
 
-            <FadeInView direction="right" delay={0.5} className="grid grid-cols-1 md:grid-cols-3 gap-4 py-4">
-              {[
-                { icon: Terminal, text: "Phần mềm theo yêu cầu" },
-                { icon: Zap, text: "Tích hợp viễn thông" },
-                { icon: ShieldCheck, text: "Vận hành bảo trì SLA" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm text-slate-300 group">
-                  <item.icon className="w-5 h-5 text-cyan-500 shrink-0 group-hover:scale-110 transition-transform" />
-                  <span>{item.text}</span>
-                </div>
-              ))}
-            </FadeInView>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-4">
+                {[
+                  { icon: Terminal, text: "Phần mềm theo yêu cầu" },
+                  { icon: Zap, text: "Tích hợp viễn thông" },
+                  { icon: ShieldCheck, text: "Vận hành bảo trì SLA" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-sm text-slate-300 group">
+                    <item.icon className="w-5 h-5 text-cyan-500 shrink-0 group-hover:scale-110 transition-transform" />
+                    <span>{item.text}</span>
+                  </div>
+                ))}
+              </div>
 
-            <FadeInView direction="right" delay={0.6} className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link
-                href="/contact"
-                className="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl shadow-xl shadow-cyan-900/30 flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95"
-              >
-                Nhận tư vấn & báo giá
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/projects"
-                className="px-8 py-4 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-white font-bold rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center"
-              >
-                Xem dự án tiêu biểu
-              </Link>
-            </FadeInView>
-          </StaggerContainer>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link
+                  href="/contact"
+                  className="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl shadow-xl shadow-cyan-900/30 flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95"
+                >
+                  Nhận tư vấn & báo giá
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/projects"
+                  className="px-8 py-4 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-white font-bold rounded-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center"
+                >
+                  Xem dự án tiêu biểu
+                </Link>
+              </div>
+            </StaggerContainer>
+          </FadeInView>
 
-          <FadeInView direction="left" delay={0.4} duration={1} distance={100} className="relative">
+          <FadeInView direction="left" delay={0.2} duration={1} distance={100} className="relative">
             <ScaleInView delay={0.6} duration={1} className="relative">
               <div className=" relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20 border border-slate-800 group">
                 <BlurInView delay={0.6}>
